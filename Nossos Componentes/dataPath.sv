@@ -46,7 +46,8 @@ module dataPath
 	logic [31:0] wRegBOut;	
 	logic wAluSrcA;
 	logic [1:0] wAluSrcB;
-	logic [1:0] wMemToReg;
+	logic [2:0] wMemToReg;
+	logic [2:0] wShiftControl;
 	logic [31:0] wWriteData;
 	logic wRegDst;
 	logic wRegWrite;
@@ -59,22 +60,29 @@ module dataPath
 	logic [25:0] wConcat;
 	logic [27:0] wShiftLeft2_26to28;
 	logic [31:0] wJumAddress;
+	logic [31:0] wRegDeslocOut;
 	logic wAndPCControl;
 	logic wOrPCControl;
 	logic wZero;
 	logic wResult;
+	logic wMenor;
+	logic [4:0] wShamt;
+	logic wShamtOrRs;
+	logic [31:0] wN;
 	
 	
 	assign wAndPCControl = wPCCond & wResult;
 	assign wOrPCControl = wPCControl | wAndPCControl; 
 	assign wfunct = wInstrucao15_0[5:0];
 	assign wInstrucao15_11 = wInstrucao15_0[15:11];
+	assign wShamt = wInstrucao15_0[10:6];
 	
 	unidadeControle unidadeControle
 	(	.clk(clock),
 		.reset(res),
 		.opcode(wInstrucao31_26),
 		.funct(wfunct),
+		.menor(wMenor),
 		.memWriteOrRead(wWriteOrRead),
 		.mdrControl(wMDRControl),
 		.pcControl(wPCControl),
@@ -91,7 +99,9 @@ module dataPath
 		.regAluControl(wRegALUControl),
 		.regDst(wRegDst),
 		.memToReg(wMemToReg),
-		.IorD(wIorD),		
+		.shiftControl(wShiftControl),
+		.IorD(wIorD),
+		.shamtOrRs(wShamtOrRs),		
 		.estado(wState)
 		); 
 		
@@ -102,7 +112,8 @@ module dataPath
 		.B(wBOut),
 		.Seletor(wALUControl),
 		.S(wALU),
-		.z(wZero)
+		.z(wZero),
+		.Menor(wMenor)
 		);
 		
 	Banco_reg BancoReg
@@ -178,6 +189,7 @@ module dataPath
 		.MDR(wMDROut),
 		.ShiftLeft16(wShiftLeft16),
 		.MemtoReg(wMemToReg),
+		.RegDeslocOut(wRegDeslocOut),
 		.WriteDataMem(wWriteData)
 );
 	
@@ -202,6 +214,7 @@ module dataPath
 		.ALUOut(wALUOut),
 		.RegDesloc(wJumAddress), // nome fio desloc jump
 		.PCSource(wPCSource),
+		.JR(wRegAOut),
 		.inPC(winPC)
 	);
 	
@@ -263,7 +276,22 @@ module dataPath
 		.Datain(wRegBOut),
 		.Dataout(wMemDataOut)
 		);
-
+	
+	RegDesloc RegDesloc
+	(	.Clk(clock),
+		.Reset(res),
+		.Shift(wShiftControl),
+		.N(wN),
+		.Entrada(wRegBOut),
+		.Saida(wRegDeslocOut)
+	);
+	
+	MuxShift MuxShift
+	(	.Shamt(wShamt),
+		.RS(wRegAOut),
+		.ShamtOrRs(wShamtOrRs),
+		.N(wN)
+	);
 	
 	assign StateOut = wState;
 	assign MemData = wMemDataOut;

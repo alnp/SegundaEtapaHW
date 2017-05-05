@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projetoHardware
-Fri May 05 17:46:47 2017
+Fri May 05 19:29:44 2017
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -26,12 +26,13 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  18. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One
  19. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two
  20. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three
- 21. Port Connectivity Checks: "Instr_Reg:IR"
- 22. Port Connectivity Checks: "concatInstr:concatInstr"
- 23. Port Connectivity Checks: "signExtend:signExtend"
- 24. Port Connectivity Checks: "Ula32:Ula"
- 25. Analysis & Synthesis Messages
- 26. Analysis & Synthesis Suppressed Messages
+ 21. Port Connectivity Checks: "RegDesloc:RegDesloc"
+ 22. Port Connectivity Checks: "Instr_Reg:IR"
+ 23. Port Connectivity Checks: "concatInstr:concatInstr"
+ 24. Port Connectivity Checks: "signExtend:signExtend"
+ 25. Port Connectivity Checks: "Ula32:Ula"
+ 26. Analysis & Synthesis Messages
+ 27. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -57,15 +58,15 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May 05 17:46:46 2017        ;
+; Analysis & Synthesis Status        ; Successful - Fri May 05 19:29:44 2017        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; projetoHardware                              ;
 ; Top-level Entity Name              ; dataPath                                     ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 2,891                                        ;
-;     Total combinational functions  ; 1,826                                        ;
-;     Dedicated logic registers      ; 1,240                                        ;
-; Total registers                    ; 1240                                         ;
+; Total logic elements               ; 2,951                                        ;
+;     Total combinational functions  ; 1,886                                        ;
+;     Dedicated logic registers      ; 1,243                                        ;
+; Total registers                    ; 1243                                         ;
 ; Total pins                         ; 272                                          ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 8,192                                        ;
@@ -164,37 +165,38 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                 ;
-+-----------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+
-; File Name with User-Entered Path        ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                       ;
-+-----------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+
-; Nossos Componentes/concatAddress.sv     ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/concatAddress.sv     ;
-; Nossos Componentes/concatInstr.sv       ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/concatInstr.sv       ;
-; Nossos Componentes/dataPath.sv          ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/dataPath.sv          ;
-; Nossos Componentes/MuxA.sv              ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxA.sv              ;
-; Nossos Componentes/MuxB.sv              ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxB.sv              ;
-; Nossos Componentes/MuxBranch.sv         ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxBranch.sv         ;
-; Nossos Componentes/MuxDataWrite.sv      ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxDataWrite.sv      ;
-; Nossos Componentes/MuxPC.sv             ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxPC.sv             ;
-; Nossos Componentes/MuxRegWrite.sv       ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxRegWrite.sv       ;
-; Nossos Componentes/MuxSaidaALU.sv       ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxSaidaALU.sv       ;
-; Nossos Componentes/shiftLeft2_26to28.sv ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/shiftLeft2_26to28.sv ;
-; Nossos Componentes/shiftLeft2_32.sv     ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/shiftLeft2_32.sv     ;
-; Nossos Componentes/shiftleft16.sv       ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/shiftleft16.sv       ;
-; Nossos Componentes/signExtend.sv        ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/signExtend.sv        ;
-; Nossos Componentes/unidadeControle.sv   ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/unidadeControle.sv   ;
-; Componentes do Projeto/Banco_reg.vhd    ; yes             ; User VHDL File                                        ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/Banco_reg.vhd    ;
-; Componentes do Projeto/Instr_Reg.vhd    ; yes             ; User VHDL File                                        ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/Instr_Reg.vhd    ;
-; Componentes do Projeto/Memoria.vhd      ; yes             ; User VHDL File                                        ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/Memoria.vhd      ;
-; Componentes do Projeto/Registrador.vhd  ; yes             ; User VHDL File                                        ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/Registrador.vhd  ;
-; Componentes do Projeto/ula32.vhd        ; yes             ; User VHDL File                                        ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/ula32.vhd        ;
-; lpm_ram_dq.tdf                          ; yes             ; Megafunction                                          ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_ram_dq.tdf                                     ;
-; altram.tdf                              ; yes             ; Megafunction                                          ; c:/altera/91sp2/quartus/libraries/megafunctions/altram.tdf                                         ;
-; altsyncram.tdf                          ; yes             ; Megafunction                                          ; c:/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf                                     ;
-; db/altsyncram_e1a1.tdf                  ; yes             ; Auto-Generated Megafunction                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/db/altsyncram_e1a1.tdf                  ;
-; instrucoes.mif                          ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; instrucoes.mif                                                                                     ;
-+-----------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                        ;
++-----------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path        ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                       ;
++-----------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------+
+; Nossos Componentes/MuxShift.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxShift.sv          ;
+; Nossos Componentes/concatAddress.sv     ; yes             ; User SystemVerilog HDL File  ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/concatAddress.sv     ;
+; Nossos Componentes/concatInstr.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/concatInstr.sv       ;
+; Nossos Componentes/dataPath.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/dataPath.sv          ;
+; Nossos Componentes/MuxA.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxA.sv              ;
+; Nossos Componentes/MuxB.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxB.sv              ;
+; Nossos Componentes/MuxBranch.sv         ; yes             ; User SystemVerilog HDL File  ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxBranch.sv         ;
+; Nossos Componentes/MuxDataWrite.sv      ; yes             ; User SystemVerilog HDL File  ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxDataWrite.sv      ;
+; Nossos Componentes/MuxPC.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxPC.sv             ;
+; Nossos Componentes/MuxRegWrite.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxRegWrite.sv       ;
+; Nossos Componentes/MuxSaidaALU.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxSaidaALU.sv       ;
+; Nossos Componentes/shiftLeft2_26to28.sv ; yes             ; User SystemVerilog HDL File  ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/shiftLeft2_26to28.sv ;
+; Nossos Componentes/shiftLeft2_32.sv     ; yes             ; User SystemVerilog HDL File  ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/shiftLeft2_32.sv     ;
+; Nossos Componentes/shiftleft16.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/shiftleft16.sv       ;
+; Nossos Componentes/signExtend.sv        ; yes             ; User SystemVerilog HDL File  ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/signExtend.sv        ;
+; Nossos Componentes/unidadeControle.sv   ; yes             ; User SystemVerilog HDL File  ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/unidadeControle.sv   ;
+; Componentes do Projeto/Banco_reg.vhd    ; yes             ; User VHDL File               ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/Banco_reg.vhd    ;
+; Componentes do Projeto/Instr_Reg.vhd    ; yes             ; User VHDL File               ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/Instr_Reg.vhd    ;
+; Componentes do Projeto/Memoria.vhd      ; yes             ; User VHDL File               ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/Memoria.vhd      ;
+; Componentes do Projeto/RegDesloc.vhd    ; yes             ; User VHDL File               ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/RegDesloc.vhd    ;
+; Componentes do Projeto/Registrador.vhd  ; yes             ; User VHDL File               ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/Registrador.vhd  ;
+; Componentes do Projeto/ula32.vhd        ; yes             ; User VHDL File               ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/ula32.vhd        ;
+; lpm_ram_dq.tdf                          ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_ram_dq.tdf                                     ;
+; altram.tdf                              ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/altram.tdf                                         ;
+; altsyncram.tdf                          ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf                                     ;
+; db/altsyncram_e1a1.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/db/altsyncram_e1a1.tdf                  ;
++-----------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -202,28 +204,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 2,891 ;
+; Estimated Total logic elements              ; 2,951 ;
 ;                                             ;       ;
-; Total combinational functions               ; 1826  ;
+; Total combinational functions               ; 1886  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 1604  ;
-;     -- 3 input functions                    ; 175   ;
+;     -- 4 input functions                    ; 1626  ;
+;     -- 3 input functions                    ; 213   ;
 ;     -- <=2 input functions                  ; 47    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 1806  ;
+;     -- normal mode                          ; 1866  ;
 ;     -- arithmetic mode                      ; 20    ;
 ;                                             ;       ;
-; Total registers                             ; 1240  ;
-;     -- Dedicated logic registers            ; 1240  ;
+; Total registers                             ; 1243  ;
+;     -- Dedicated logic registers            ; 1243  ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 272   ;
 ; Total memory bits                           ; 8192  ;
 ; Maximum fan-out node                        ; clock ;
-; Maximum fan-out                             ; 1272  ;
-; Total fan-out                               ; 12640 ;
-; Average fan-out                             ; 3.75  ;
+; Maximum fan-out                             ; 1275  ;
+; Total fan-out                               ; 12807 ;
+; Average fan-out                             ; 3.73  ;
 +---------------------------------------------+-------+
 
 
@@ -232,40 +234,40 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                 ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
-; |dataPath                                       ; 1826 (1)          ; 1240 (0)     ; 8192        ; 0            ; 0       ; 0         ; 272  ; 0            ; |dataPath                                                                                                           ; work         ;
+; |dataPath                                       ; 1886 (2)          ; 1243 (0)     ; 8192        ; 0            ; 0       ; 0         ; 272  ; 0            ; |dataPath                                                                                                           ; work         ;
 ;    |Banco_reg:BancoReg|                         ; 1392 (1392)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Banco_reg:BancoReg                                                                                        ; work         ;
-;    |Instr_Reg:IR|                               ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Instr_Reg:IR                                                                                              ;              ;
+;    |Instr_Reg:IR|                               ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Instr_Reg:IR                                                                                              ; work         ;
 ;    |Memoria:Memoria|                            ; 23 (23)           ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria                                                                                           ; work         ;
-;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One                                                                   ;              ;
+;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ; work         ;
 ;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ; work         ;
 ;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ; work         ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ;              ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ;              ;
-;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ; work         ;
-;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ; work         ;
+;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ;              ;
+;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two                                                                   ; work         ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ;              ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ; work         ;
-;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM                                                                            ;              ;
+;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ;              ;
+;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM                                                                            ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ;              ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
 ;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated            ; work         ;
 ;    |MuxA:MuxA|                                  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxA:MuxA                                                                                                 ; work         ;
-;    |MuxB:MuxB|                                  ; 47 (47)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxB:MuxB                                                                                                 ; work         ;
-;    |MuxBranch:MuxBranch|                        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxBranch:MuxBranch                                                                                       ;              ;
-;    |MuxDataWrite:MuxDataWrite|                  ; 49 (49)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxDataWrite:MuxDataWrite                                                                                 ; work         ;
+;    |MuxB:MuxB|                                  ; 49 (49)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxB:MuxB                                                                                                 ; work         ;
+;    |MuxBranch:MuxBranch|                        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxBranch:MuxBranch                                                                                       ; work         ;
+;    |MuxDataWrite:MuxDataWrite|                  ; 48 (48)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxDataWrite:MuxDataWrite                                                                                 ; work         ;
 ;    |MuxPC:MuxPc|                                ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxPC:MuxPc                                                                                               ; work         ;
-;    |MuxRegWrite:MuxRegWrite|                    ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxRegWrite:MuxRegWrite                                                                                   ; work         ;
-;    |MuxSaidaALU:MuxSaidaAlu|                    ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxSaidaALU:MuxSaidaAlu                                                                                   ; work         ;
-;    |Registrador:ALUOut|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:ALUOut                                                                                        ;              ;
-;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:A                                                                                             ;              ;
+;    |MuxRegWrite:MuxRegWrite|                    ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxRegWrite:MuxRegWrite                                                                                   ;              ;
+;    |MuxSaidaALU:MuxSaidaAlu|                    ; 56 (56)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxSaidaALU:MuxSaidaAlu                                                                                   ; work         ;
+;    |Registrador:ALUOut|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:ALUOut                                                                                        ; work         ;
+;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:A                                                                                             ; work         ;
 ;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:B                                                                                             ; work         ;
 ;    |Registrador:Mem|                            ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:Mem                                                                                           ; work         ;
-;    |Registrador:pcReg|                          ; 27 (27)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:pcReg                                                                                         ;              ;
-;    |Ula32:Ula|                                  ; 145 (145)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Ula32:Ula                                                                                                 ;              ;
-;    |unidadeControle:unidadeControle|            ; 67 (67)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|unidadeControle:unidadeControle                                                                           ;              ;
+;    |Registrador:pcReg|                          ; 6 (6)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:pcReg                                                                                         ;              ;
+;    |Ula32:Ula|                                  ; 166 (166)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Ula32:Ula                                                                                                 ;              ;
+;    |unidadeControle:unidadeControle|            ; 75 (75)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|unidadeControle:unidadeControle                                                                           ;              ;
 +-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -283,36 +285,39 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |dataPath|unidadeControle:unidadeControle|state                                                                                                                                                                                                                                                                                                                               ;
-+----------------------+---------+-----------+---------------------+----------------+----------+----------------+----------------+---------------------+----------------+----------+-----------+-----------+-------------------+-----------+-------------+-----------+-----------+-----------+-----------+--------------+---------------+----------------------+------------------+-------------+
-; Name                 ; state.J ; state.Lui ; state.SW_step3_wait ; state.SW_step2 ; state.SW ; state.LW_step5 ; state.LW_step4 ; state.LW_step3_wait ; state.LW_step2 ; state.LW ; state.Bne ; state.Beq ; state.WriteRegAlu ; state.Nop ; state.Break ; state.Xor ; state.Sub ; state.And ; state.Add ; state.Decode ; state.IRWrite ; state.WaitMemoryRead ; state.MemoryRead ; state.Reset ;
-+----------------------+---------+-----------+---------------------+----------------+----------+----------------+----------------+---------------------+----------------+----------+-----------+-----------+-------------------+-----------+-------------+-----------+-----------+-----------+-----------+--------------+---------------+----------------------+------------------+-------------+
-; state.Reset          ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 0           ;
-; state.MemoryRead     ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 1                ; 1           ;
-; state.WaitMemoryRead ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 1                    ; 0                ; 1           ;
-; state.IRWrite        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 1             ; 0                    ; 0                ; 1           ;
-; state.Decode         ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 1            ; 0             ; 0                    ; 0                ; 1           ;
-; state.Add            ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 1         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.And            ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 1         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.Sub            ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 1         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.Xor            ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 1         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.Break          ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 1           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.Nop            ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 1         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.WriteRegAlu    ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 1                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.Beq            ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 1         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.Bne            ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 1         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.LW             ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 1        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.LW_step2       ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 1              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.LW_step3_wait  ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 1                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.LW_step4       ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 1              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.LW_step5       ; 0       ; 0         ; 0                   ; 0              ; 0        ; 1              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.SW             ; 0       ; 0         ; 0                   ; 0              ; 1        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.SW_step2       ; 0       ; 0         ; 0                   ; 1              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.SW_step3_wait  ; 0       ; 0         ; 1                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.Lui            ; 0       ; 1         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-; state.J              ; 1       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
-+----------------------+---------+-----------+---------------------+----------------+----------+----------------+----------------+---------------------+----------------+----------+-----------+-----------+-------------------+-----------+-------------+-----------+-----------+-----------+-----------+--------------+---------------+----------------------+------------------+-------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |dataPath|unidadeControle:unidadeControle|state                                                                                                                                                                                                                                                                                                                                                                               ;
++----------------------+-------------+----------------------+----------+---------+-----------+---------------------+----------------+----------+----------------+----------------+---------------------+----------------+----------+-----------+-----------+-------------------+-----------+-------------+-----------+-----------+-----------+-----------+--------------+---------------+----------------------+------------------+-------------+
+; Name                 ; state.Addiu ; state.WriteRegAluImm ; state.JR ; state.J ; state.Lui ; state.SW_step3_wait ; state.SW_step2 ; state.SW ; state.LW_step5 ; state.LW_step4 ; state.LW_step3_wait ; state.LW_step2 ; state.LW ; state.Bne ; state.Beq ; state.WriteRegAlu ; state.Nop ; state.Break ; state.Xor ; state.Sub ; state.And ; state.Add ; state.Decode ; state.IRWrite ; state.WaitMemoryRead ; state.MemoryRead ; state.Reset ;
++----------------------+-------------+----------------------+----------+---------+-----------+---------------------+----------------+----------+----------------+----------------+---------------------+----------------+----------+-----------+-----------+-------------------+-----------+-------------+-----------+-----------+-----------+-----------+--------------+---------------+----------------------+------------------+-------------+
+; state.Reset          ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 0           ;
+; state.MemoryRead     ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 1                ; 1           ;
+; state.WaitMemoryRead ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 1                    ; 0                ; 1           ;
+; state.IRWrite        ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 1             ; 0                    ; 0                ; 1           ;
+; state.Decode         ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 1            ; 0             ; 0                    ; 0                ; 1           ;
+; state.Add            ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 1         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.And            ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 1         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.Sub            ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 1         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.Xor            ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 1         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.Break          ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 1           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.Nop            ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 1         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.WriteRegAlu    ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 1                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.Beq            ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 1         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.Bne            ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 1         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.LW             ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 1        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.LW_step2       ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 1              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.LW_step3_wait  ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 1                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.LW_step4       ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 1              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.LW_step5       ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 1              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.SW             ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 1        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.SW_step2       ; 0           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 1              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.SW_step3_wait  ; 0           ; 0                    ; 0        ; 0       ; 0         ; 1                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.Lui            ; 0           ; 0                    ; 0        ; 0       ; 1         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.J              ; 0           ; 0                    ; 0        ; 1       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.JR             ; 0           ; 0                    ; 1        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.WriteRegAluImm ; 0           ; 1                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.Addiu          ; 1           ; 0                    ; 0        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
++----------------------+-------------+----------------------+----------+---------+-----------+---------------------+----------------+----------+----------------+----------------+---------------------+----------------+----------+-----------+-----------+-------------------+-----------+-------------+-----------+-----------+-----------+-----------+--------------+---------------+----------------------+------------------+-------------+
 
 
 +---------------------------------------------------------------+
@@ -320,13 +325,14 @@ Encoding Type:  One-Hot
 +------------------------------------------+--------------------+
 ; Register name                            ; Reason for Removal ;
 +------------------------------------------+--------------------+
-; unidadeControle:unidadeControle|state~18 ; Lost fanout        ;
-; unidadeControle:unidadeControle|state~19 ; Lost fanout        ;
-; unidadeControle:unidadeControle|state~20 ; Lost fanout        ;
+; RegDesloc:RegDesloc|temp[0..31]          ; Lost fanout        ;
 ; unidadeControle:unidadeControle|state~21 ; Lost fanout        ;
 ; unidadeControle:unidadeControle|state~22 ; Lost fanout        ;
 ; unidadeControle:unidadeControle|state~23 ; Lost fanout        ;
-; Total Number of Removed Registers = 6    ;                    ;
+; unidadeControle:unidadeControle|state~24 ; Lost fanout        ;
+; unidadeControle:unidadeControle|state~25 ; Lost fanout        ;
+; unidadeControle:unidadeControle|state~26 ; Lost fanout        ;
+; Total Number of Removed Registers = 38   ;                    ;
 +------------------------------------------+--------------------+
 
 
@@ -335,10 +341,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1240  ;
+; Total registers                              ; 1243  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 26    ;
-; Number of registers using Asynchronous Clear ; 1240  ;
+; Number of registers using Synchronous Load   ; 4     ;
+; Number of registers using Asynchronous Clear ; 1243  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 1216  ;
 ; Number of registers using Preset             ; 0     ;
@@ -350,20 +356,19 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |dataPath|Registrador:pcReg|Saida[0]                 ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |dataPath|Registrador:pcReg|Saida[28]                ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |dataPath|Registrador:pcReg|Saida[27]                ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |dataPath|Registrador:B|Saida[10]                    ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |dataPath|Registrador:A|Saida[31]                    ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |dataPath|MuxDataWrite:MuxDataWrite|Mux23            ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |dataPath|MuxDataWrite:MuxDataWrite|Mux12            ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |dataPath|Registrador:pcReg|Saida[1]                 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |dataPath|Registrador:pcReg|Saida[31]                ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |dataPath|Registrador:pcReg|Saida[20]                ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |dataPath|Registrador:B|Saida[31]                    ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |dataPath|Registrador:A|Saida[5]                     ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |dataPath|MuxDataWrite:MuxDataWrite|Mux25            ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |dataPath|MuxDataWrite:MuxDataWrite|Mux15            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |dataPath|MuxB:MuxB|Mux30                            ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |dataPath|MuxB:MuxB|Mux7                             ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |dataPath|MuxB:MuxB|Mux20                            ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 64 LEs               ; 96 LEs                 ; No         ; |dataPath|Ula32:Ula|Mux22                            ;
-; 65:1               ; 11 bits   ; 473 LEs       ; 11 LEs               ; 462 LEs                ; No         ; |dataPath|unidadeControle:unidadeControle|Selector17 ;
-; 66:1               ; 7 bits    ; 308 LEs       ; 42 LEs               ; 266 LEs                ; No         ; |dataPath|unidadeControle:unidadeControle|state      ;
-; 128:1              ; 5 bits    ; 425 LEs       ; 35 LEs               ; 390 LEs                ; No         ; |dataPath|unidadeControle:unidadeControle|state      ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |dataPath|MuxB:MuxB|Mux13                            ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |dataPath|MuxB:MuxB|Mux29                            ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 64 LEs               ; 96 LEs                 ; No         ; |dataPath|Ula32:Ula|Mux25                            ;
+; 65:1               ; 10 bits   ; 430 LEs       ; 60 LEs               ; 370 LEs                ; No         ; |dataPath|unidadeControle:unidadeControle|Selector19 ;
+; 127:1              ; 7 bits    ; 588 LEs       ; 49 LEs               ; 539 LEs                ; No         ; |dataPath|unidadeControle:unidadeControle|Selector16 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
 
 
@@ -495,6 +500,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "RegDesloc:RegDesloc"                                                                                           ;
++------+-------+------------------+---------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity         ; Details                                                                                                 ;
++------+-------+------------------+---------------------------------------------------------------------------------------------------------+
+; n    ; Input ; Critical Warning ; Can't connect array with 32 elements in array dimension 1 to port with 5 elements in the same dimension ;
++------+-------+------------------+---------------------------------------------------------------------------------------------------------+
+
+
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "Instr_Reg:IR"                                                                                                         ;
 +-----------+--------+------------------+----------------------------------------------------------------------------------------------------------+
@@ -531,7 +545,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; negativo ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 ; igual    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 ; maior    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; menor    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 +----------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
@@ -541,8 +554,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Fri May 05 17:46:37 2017
+    Info: Processing started: Fri May 05 19:29:35 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projetoHardware -c projetoHardware
+Info: Found 1 design units, including 1 entities, in source file nossos componentes/muxshift.sv
+    Info: Found entity 1: MuxShift
 Info: Found 1 design units, including 1 entities, in source file nossos componentes/concataddress.sv
     Info: Found entity 1: concatAddress
 Info: Found 1 design units, including 1 entities, in source file nossos componentes/concatinstr.sv
@@ -594,9 +609,12 @@ Info: Found 2 design units, including 1 entities, in source file componentes do 
 Info: Found 2 design units, including 1 entities, in source file componentes do projeto/ula32.vhd
     Info: Found design unit 1: Ula32-behavioral
     Info: Found entity 1: Ula32
-Warning (10236): Verilog HDL Implicit Net warning at dataPath.sv(79): created implicit net for "wMDRControl"
+Warning (10236): Verilog HDL Implicit Net warning at dataPath.sv(87): created implicit net for "wMDRControl"
 Info: Elaborating entity "dataPath" for the top level hierarchy
 Info: Elaborating entity "unidadeControle" for hierarchy "unidadeControle:unidadeControle"
+Info (10264): Verilog HDL Case Statement information at unidadeControle.sv(66): all case item expressions in this case statement are onehot
+Warning (10034): Output port "shiftControl" at unidadeControle.sv(22) has no driver
+Warning (10034): Output port "shamtOrRs" at unidadeControle.sv(24) has no driver
 Info: Elaborating entity "Ula32" for hierarchy "Ula32:Ula"
 Info: Elaborating entity "Banco_reg" for hierarchy "Banco_reg:BancoReg"
 Info: Elaborating entity "Registrador" for hierarchy "Registrador:pcReg"
@@ -637,6 +655,9 @@ Info: Elaborated megafunction instantiation "Memoria:Memoria|LPM_RAM_DQ:MEM|altr
 Info: Found 1 design units, including 1 entities, in source file db/altsyncram_e1a1.tdf
     Info: Found entity 1: altsyncram_e1a1
 Info: Elaborating entity "altsyncram_e1a1" for hierarchy "Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated"
+Info: Elaborating entity "RegDesloc" for hierarchy "RegDesloc:RegDesloc"
+Warning (10492): VHDL Process Statement warning at RegDesloc.vhd(1102): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "MuxShift" for hierarchy "MuxShift:MuxShift"
 Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
 Warning: Net is missing source, defaulting to GND
@@ -669,30 +690,62 @@ Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
 Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
-Warning: 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "StateOut[5]" is stuck at GND
-Info: 6 registers lost all their fanouts during netlist optimizations. The first 6 are displayed below.
-    Info: Register "unidadeControle:unidadeControle|state~18" lost all its fanouts during netlist optimizations.
-    Info: Register "unidadeControle:unidadeControle|state~19" lost all its fanouts during netlist optimizations.
-    Info: Register "unidadeControle:unidadeControle|state~20" lost all its fanouts during netlist optimizations.
+Info: 38 registers lost all their fanouts during netlist optimizations. The first 38 are displayed below.
+    Info: Register "RegDesloc:RegDesloc|temp[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "RegDesloc:RegDesloc|temp[0]" lost all its fanouts during netlist optimizations.
     Info: Register "unidadeControle:unidadeControle|state~21" lost all its fanouts during netlist optimizations.
     Info: Register "unidadeControle:unidadeControle|state~22" lost all its fanouts during netlist optimizations.
     Info: Register "unidadeControle:unidadeControle|state~23" lost all its fanouts during netlist optimizations.
+    Info: Register "unidadeControle:unidadeControle|state~24" lost all its fanouts during netlist optimizations.
+    Info: Register "unidadeControle:unidadeControle|state~25" lost all its fanouts during netlist optimizations.
+    Info: Register "unidadeControle:unidadeControle|state~26" lost all its fanouts during netlist optimizations.
 Warning: Ignored assignments for entity "projetoHardware" -- entity does not exist in design
     Warning: Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity projetoHardware -section_id "Root Region" was ignored
     Warning: Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity projetoHardware -section_id "Root Region" was ignored
 Info: Generated suppressed messages file C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/projetoHardware.map.smsg
-Info: Implemented 3260 device resources after synthesis - the final resource count might be different
+Info: Implemented 3321 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 270 output pins
-    Info: Implemented 2956 logic cells
+    Info: Implemented 3017 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 40 warnings
-    Info: Peak virtual memory: 257 megabytes
-    Info: Processing ended: Fri May 05 17:46:47 2017
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:09
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 43 warnings
+    Info: Peak virtual memory: 261 megabytes
+    Info: Processing ended: Fri May 05 19:29:44 2017
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:11
 
 
 +------------------------------------------+
