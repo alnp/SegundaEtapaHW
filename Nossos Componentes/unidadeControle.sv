@@ -52,8 +52,15 @@ module unidadeControle
 	JR,		//24
 	//Modificacao - Alessandra
 	WriteRegAluImm, 	//25
-	Addiu	//26
-	//fim MA
+	Addiu/*,	//26
+	Addi,	//27
+	Andi,	//28
+	Lbu,	//29
+	Lhu,	//30
+	Sb,		//31
+	Sh,		//32
+	Slti,	//33
+	Sxori	//34*/
 	} state;
 	
 	initial state <= Reset;
@@ -90,9 +97,15 @@ module unidadeControle
 					6'hf: state <= Lui;			//lui
 					6'h2: state <=	J;			//jump
 					
-					//Modificacao - Alessandra
-					6'h9: state <= Addiu;		//addi
-					// fim MA
+					//6'h8: state <=	Addi;			//addi
+					6'h9: state <=	Addiu;			//addiu
+					/*6'hc: state <=	Andi;			//andi
+					6'h24: state <=	Lbu;			//lbu
+					6'h25: state <=	Lhu;			//lhu
+					6'h28: state <=	Sb;				//sb
+					6'h29: state <=	Sh;				//sh
+					6'ha: state <=	Slti;			//slti
+					6'he: state <=	Sxori;			//sxori*/
 					
 				endcase
 			end
@@ -695,29 +708,6 @@ module unidadeControle
 				pcControl = 1'b1;
 				estado <= state;
 			end
-			Addiu:
-			begin
-				mdrControl = 1'b0;
-				memToReg = 2'b01;
-				pcCond = 1'b0;
-				origPC = 2'b00;
-				regDst = 1'b0;
-				regWrite = 1'b0;
-				bneORbeq = 1'b0;
-				IorD = 1'b1;
-				
-				memWriteOrRead = 1'b0;
-				pcControl = 1'b0;
-				irWrite = 1'b0;
-				
-				aluControl = 3'b001;
-				aluSrcA = 1'b1;
-				aluSrcB = 2'b00;
-				writeA = 1'b0;
-				writeB = 1'b0;
-				regAluControl = 1'b1;
-				estado <= state;
-			end	
 			WriteRegAluImm:
 			begin
 				mdrControl = 1'b0;
@@ -740,7 +730,63 @@ module unidadeControle
 				writeB = 1'b0;
 				regAluControl = 1'b1;
 				estado <= state;
+			end
+			Addiu:
+			begin
+				mdrControl = 1'b0;
+				memToReg = 2'b01;
+				pcCond = 1'b0;
+				origPC = 2'b00;
+				regDst = 1'b0;
+				regWrite = 1'b0;
+				bneORbeq = 1'b0;
+				IorD = 1'b1;
+				
+				memWriteOrRead = 1'b0;
+				pcControl = 1'b0;
+				irWrite = 1'b0;
+				
+				aluControl = 3'b001;
+				aluSrcA = 1'b1;
+				aluSrcB = 2'b00;
+				writeA = 1'b0;
+				writeB = 1'b0;
+				regAluControl = 1'b1;
+				estado <= state;
+			end		
+			/*			
+			Addi:
+			begin
 			end	
+			
+			Andi:
+			begin
+			end	
+			
+			Lbu:
+			begin
+			end	
+			
+			Lhu:
+			begin
+			end
+			
+			Sb 
+			begin
+			end	
+			
+			Sh:
+			begin
+			end		
+			
+			Slti:
+			begin
+			end	
+			
+			Sxori:
+			begin
+			end	
+*/	
 		endcase
 	end
 		
