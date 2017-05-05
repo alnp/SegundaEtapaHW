@@ -1,0 +1,16 @@
+*.rpt
+*.done
+*.fit.*
+*.pin
+*.pof
+*.qws
+*.sim.rpt
+*.sof
+*.tan.*
+*.asm.*
+*.map.*
+*~
+*.bak
+*.dpf
+/db
+/Incremental_db
