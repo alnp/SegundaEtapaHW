@@ -45,3 +45,9 @@ set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name VHDL_FILE "Componentes do Projeto/Banco_reg.vhd"
+set_global_assignment -name VHDL_FILE "Componentes do Projeto/Instr_Reg.vhd"
+set_global_assignment -name VHDL_FILE "Componentes do Projeto/Memoria.vhd"
+set_global_assignment -name VHDL_FILE "Componentes do Projeto/RegDesloc.vhd"
+set_global_assignment -name VHDL_FILE "Componentes do Projeto/Registrador.vhd"
+set_global_assignment -name VHDL_FILE "Componentes do Projeto/ula32.vhd"
