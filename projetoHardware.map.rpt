@@ -1,0 +1,703 @@
+Analysis & Synthesis report for projetoHardware
+Fri May 05 17:46:47 2017
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |dataPath|unidadeControle:unidadeControle|state
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated
+ 14. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated
+ 15. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated
+ 16. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated
+ 17. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM
+ 18. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One
+ 19. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two
+ 20. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three
+ 21. Port Connectivity Checks: "Instr_Reg:IR"
+ 22. Port Connectivity Checks: "concatInstr:concatInstr"
+ 23. Port Connectivity Checks: "signExtend:signExtend"
+ 24. Port Connectivity Checks: "Ula32:Ula"
+ 25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++------------------------------------+----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri May 05 17:46:46 2017        ;
+; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
+; Revision Name                      ; projetoHardware                              ;
+; Top-level Entity Name              ; dataPath                                     ;
+; Family                             ; Cyclone II                                   ;
+; Total logic elements               ; 2,891                                        ;
+;     Total combinational functions  ; 1,826                                        ;
+;     Dedicated logic registers      ; 1,240                                        ;
+; Total registers                    ; 1240                                         ;
+; Total pins                         ; 272                                          ;
+; Total virtual pins                 ; 0                                            ;
+; Total memory bits                  ; 8,192                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                            ;
+; Total PLLs                         ; 0                                            ;
++------------------------------------+----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C70F896C6       ;                    ;
+; Top-level entity name                                                      ; dataPath           ; projetoHardware    ;
+; Family name                                                                ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                 ;
++-----------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path        ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                       ;
++-----------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+; Nossos Componentes/concatAddress.sv     ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/concatAddress.sv     ;
+; Nossos Componentes/concatInstr.sv       ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/concatInstr.sv       ;
+; Nossos Componentes/dataPath.sv          ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/dataPath.sv          ;
+; Nossos Componentes/MuxA.sv              ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxA.sv              ;
+; Nossos Componentes/MuxB.sv              ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxB.sv              ;
+; Nossos Componentes/MuxBranch.sv         ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxBranch.sv         ;
+; Nossos Componentes/MuxDataWrite.sv      ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxDataWrite.sv      ;
+; Nossos Componentes/MuxPC.sv             ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxPC.sv             ;
+; Nossos Componentes/MuxRegWrite.sv       ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxRegWrite.sv       ;
+; Nossos Componentes/MuxSaidaALU.sv       ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxSaidaALU.sv       ;
+; Nossos Componentes/shiftLeft2_26to28.sv ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/shiftLeft2_26to28.sv ;
+; Nossos Componentes/shiftLeft2_32.sv     ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/shiftLeft2_32.sv     ;
+; Nossos Componentes/shiftleft16.sv       ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/shiftleft16.sv       ;
+; Nossos Componentes/signExtend.sv        ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/signExtend.sv        ;
+; Nossos Componentes/unidadeControle.sv   ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/unidadeControle.sv   ;
+; Componentes do Projeto/Banco_reg.vhd    ; yes             ; User VHDL File                                        ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/Banco_reg.vhd    ;
+; Componentes do Projeto/Instr_Reg.vhd    ; yes             ; User VHDL File                                        ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/Instr_Reg.vhd    ;
+; Componentes do Projeto/Memoria.vhd      ; yes             ; User VHDL File                                        ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/Memoria.vhd      ;
+; Componentes do Projeto/Registrador.vhd  ; yes             ; User VHDL File                                        ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/Registrador.vhd  ;
+; Componentes do Projeto/ula32.vhd        ; yes             ; User VHDL File                                        ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/ula32.vhd        ;
+; lpm_ram_dq.tdf                          ; yes             ; Megafunction                                          ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_ram_dq.tdf                                     ;
+; altram.tdf                              ; yes             ; Megafunction                                          ; c:/altera/91sp2/quartus/libraries/megafunctions/altram.tdf                                         ;
+; altsyncram.tdf                          ; yes             ; Megafunction                                          ; c:/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf                                     ;
+; db/altsyncram_e1a1.tdf                  ; yes             ; Auto-Generated Megafunction                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/db/altsyncram_e1a1.tdf                  ;
+; instrucoes.mif                          ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; instrucoes.mif                                                                                     ;
++-----------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 2,891 ;
+;                                             ;       ;
+; Total combinational functions               ; 1826  ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 1604  ;
+;     -- 3 input functions                    ; 175   ;
+;     -- <=2 input functions                  ; 47    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 1806  ;
+;     -- arithmetic mode                      ; 20    ;
+;                                             ;       ;
+; Total registers                             ; 1240  ;
+;     -- Dedicated logic registers            ; 1240  ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 272   ;
+; Total memory bits                           ; 8192  ;
+; Maximum fan-out node                        ; clock ;
+; Maximum fan-out                             ; 1272  ;
+; Total fan-out                               ; 12640 ;
+; Average fan-out                             ; 3.75  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                              ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                 ; Library Name ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
+; |dataPath                                       ; 1826 (1)          ; 1240 (0)     ; 8192        ; 0            ; 0       ; 0         ; 272  ; 0            ; |dataPath                                                                                                           ; work         ;
+;    |Banco_reg:BancoReg|                         ; 1392 (1392)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Banco_reg:BancoReg                                                                                        ; work         ;
+;    |Instr_Reg:IR|                               ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Instr_Reg:IR                                                                                              ;              ;
+;    |Memoria:Memoria|                            ; 23 (23)           ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria                                                                                           ; work         ;
+;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One                                                                   ;              ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
+;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ; work         ;
+;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ; work         ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ;              ;
+;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ; work         ;
+;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ; work         ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
+;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ; work         ;
+;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM                                                                            ;              ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ;              ;
+;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated            ; work         ;
+;    |MuxA:MuxA|                                  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxA:MuxA                                                                                                 ; work         ;
+;    |MuxB:MuxB|                                  ; 47 (47)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxB:MuxB                                                                                                 ; work         ;
+;    |MuxBranch:MuxBranch|                        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxBranch:MuxBranch                                                                                       ;              ;
+;    |MuxDataWrite:MuxDataWrite|                  ; 49 (49)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxDataWrite:MuxDataWrite                                                                                 ; work         ;
+;    |MuxPC:MuxPc|                                ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxPC:MuxPc                                                                                               ; work         ;
+;    |MuxRegWrite:MuxRegWrite|                    ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxRegWrite:MuxRegWrite                                                                                   ; work         ;
+;    |MuxSaidaALU:MuxSaidaAlu|                    ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxSaidaALU:MuxSaidaAlu                                                                                   ; work         ;
+;    |Registrador:ALUOut|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:ALUOut                                                                                        ;              ;
+;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:A                                                                                             ;              ;
+;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:B                                                                                             ; work         ;
+;    |Registrador:Mem|                            ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:Mem                                                                                           ; work         ;
+;    |Registrador:pcReg|                          ; 27 (27)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:pcReg                                                                                         ;              ;
+;    |Ula32:Ula|                                  ; 145 (145)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Ula32:Ula                                                                                                 ;              ;
+;    |unidadeControle:unidadeControle|            ; 67 (67)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|unidadeControle:unidadeControle                                                                           ;              ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                              ;
++----------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
+; Name                                                                                                                 ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF            ;
++----------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
+; Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
+; Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
+; Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
+; Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated|ALTSYNCRAM            ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
++----------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |dataPath|unidadeControle:unidadeControle|state                                                                                                                                                                                                                                                                                                                               ;
++----------------------+---------+-----------+---------------------+----------------+----------+----------------+----------------+---------------------+----------------+----------+-----------+-----------+-------------------+-----------+-------------+-----------+-----------+-----------+-----------+--------------+---------------+----------------------+------------------+-------------+
+; Name                 ; state.J ; state.Lui ; state.SW_step3_wait ; state.SW_step2 ; state.SW ; state.LW_step5 ; state.LW_step4 ; state.LW_step3_wait ; state.LW_step2 ; state.LW ; state.Bne ; state.Beq ; state.WriteRegAlu ; state.Nop ; state.Break ; state.Xor ; state.Sub ; state.And ; state.Add ; state.Decode ; state.IRWrite ; state.WaitMemoryRead ; state.MemoryRead ; state.Reset ;
++----------------------+---------+-----------+---------------------+----------------+----------+----------------+----------------+---------------------+----------------+----------+-----------+-----------+-------------------+-----------+-------------+-----------+-----------+-----------+-----------+--------------+---------------+----------------------+------------------+-------------+
+; state.Reset          ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 0           ;
+; state.MemoryRead     ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 1                ; 1           ;
+; state.WaitMemoryRead ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 1                    ; 0                ; 1           ;
+; state.IRWrite        ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 1             ; 0                    ; 0                ; 1           ;
+; state.Decode         ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 1            ; 0             ; 0                    ; 0                ; 1           ;
+; state.Add            ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 1         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.And            ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 1         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.Sub            ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 1         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.Xor            ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 1         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.Break          ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 1           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.Nop            ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 1         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.WriteRegAlu    ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 1                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.Beq            ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 1         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.Bne            ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 1         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.LW             ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 1        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.LW_step2       ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 1              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.LW_step3_wait  ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 1                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.LW_step4       ; 0       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 1              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.LW_step5       ; 0       ; 0         ; 0                   ; 0              ; 0        ; 1              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.SW             ; 0       ; 0         ; 0                   ; 0              ; 1        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.SW_step2       ; 0       ; 0         ; 0                   ; 1              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.SW_step3_wait  ; 0       ; 0         ; 1                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.Lui            ; 0       ; 1         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
+; state.J              ; 1       ; 0         ; 0                   ; 0              ; 0        ; 0              ; 0              ; 0                   ; 0              ; 0        ; 0         ; 0         ; 0                 ; 0         ; 0           ; 0         ; 0         ; 0         ; 0         ; 0            ; 0             ; 0                    ; 0                ; 1           ;
++----------------------+---------+-----------+---------------------+----------------+----------+----------------+----------------+---------------------+----------------+----------+-----------+-----------+-------------------+-----------+-------------+-----------+-----------+-----------+-----------+--------------+---------------+----------------------+------------------+-------------+
+
+
++---------------------------------------------------------------+
+; Registers Removed During Synthesis                            ;
++------------------------------------------+--------------------+
+; Register name                            ; Reason for Removal ;
++------------------------------------------+--------------------+
+; unidadeControle:unidadeControle|state~18 ; Lost fanout        ;
+; unidadeControle:unidadeControle|state~19 ; Lost fanout        ;
+; unidadeControle:unidadeControle|state~20 ; Lost fanout        ;
+; unidadeControle:unidadeControle|state~21 ; Lost fanout        ;
+; unidadeControle:unidadeControle|state~22 ; Lost fanout        ;
+; unidadeControle:unidadeControle|state~23 ; Lost fanout        ;
+; Total Number of Removed Registers = 6    ;                    ;
++------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1240  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 26    ;
+; Number of registers using Asynchronous Clear ; 1240  ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1216  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |dataPath|Registrador:pcReg|Saida[0]                 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |dataPath|Registrador:pcReg|Saida[28]                ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |dataPath|Registrador:pcReg|Saida[27]                ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |dataPath|Registrador:B|Saida[10]                    ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |dataPath|Registrador:A|Saida[31]                    ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |dataPath|MuxDataWrite:MuxDataWrite|Mux23            ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |dataPath|MuxDataWrite:MuxDataWrite|Mux12            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |dataPath|MuxB:MuxB|Mux30                            ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |dataPath|MuxB:MuxB|Mux7                             ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |dataPath|MuxB:MuxB|Mux20                            ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 64 LEs               ; 96 LEs                 ; No         ; |dataPath|Ula32:Ula|Mux22                            ;
+; 65:1               ; 11 bits   ; 473 LEs       ; 11 LEs               ; 462 LEs                ; No         ; |dataPath|unidadeControle:unidadeControle|Selector17 ;
+; 66:1               ; 7 bits    ; 308 LEs       ; 42 LEs               ; 266 LEs                ; No         ; |dataPath|unidadeControle:unidadeControle|state      ;
+; 128:1              ; 5 bits    ; 425 LEs       ; 35 LEs               ; 390 LEs                ; No         ; |dataPath|unidadeControle:unidadeControle|state      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                      ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                       ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                               ;
++---------------------------------+--------------------+------+------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                ;
++---------------------------------+--------------------+------+------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                               ;
++---------------------------------+--------------------+------+------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                ;
++---------------------------------+--------------------+------+------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                 ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                  ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                    ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                    ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                    ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                           ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                           ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                           ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                           ;
+; USE_EAB                ; ON             ; Untyped                           ;
+; DEVICE_FAMILY          ; Cyclone II     ; Untyped                           ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                             ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                             ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                             ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                                    ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                    ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                                    ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                                    ;
+; USE_EAB                ; ON             ; Untyped                                    ;
+; DEVICE_FAMILY          ; Cyclone II     ; Untyped                                    ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                             ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                             ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                             ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                                    ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                    ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                                    ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                                    ;
+; USE_EAB                ; ON             ; Untyped                                    ;
+; DEVICE_FAMILY          ; Cyclone II     ; Untyped                                    ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                               ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                               ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                               ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                                      ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                      ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                                      ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                                      ;
+; USE_EAB                ; ON             ; Untyped                                      ;
+; DEVICE_FAMILY          ; Cyclone II     ; Untyped                                      ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Instr_Reg:IR"                                                                                                         ;
++-----------+--------+------------------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity         ; Details                                                                                                  ;
++-----------+--------+------------------+----------------------------------------------------------------------------------------------------------+
+; instr15_0 ; Output ; Critical Warning ; Can't connect array with 17 elements in array dimension 1 to port with 16 elements in the same dimension ;
++-----------+--------+------------------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "concatInstr:concatInstr"                                                                                                                                                                   ;
++---------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; dezesseisBits ; Input ; Warning  ; Input port expression (17 bits) is wider than the input port (16 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++---------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "signExtend:signExtend"                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; in   ; Input ; Warning  ; Input port expression (17 bits) is wider than the input port (16 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Ula32:Ula"                                                                                                   ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; overflow ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; negativo ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; igual    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; maior    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; menor    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Fri May 05 17:46:37 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projetoHardware -c projetoHardware
+Info: Found 1 design units, including 1 entities, in source file nossos componentes/concataddress.sv
+    Info: Found entity 1: concatAddress
+Info: Found 1 design units, including 1 entities, in source file nossos componentes/concatinstr.sv
+    Info: Found entity 1: concatInstr
+Info: Found 1 design units, including 1 entities, in source file nossos componentes/datapath.sv
+    Info: Found entity 1: dataPath
+Info: Found 1 design units, including 1 entities, in source file nossos componentes/muxa.sv
+    Info: Found entity 1: MuxA
+Info: Found 1 design units, including 1 entities, in source file nossos componentes/muxb.sv
+    Info: Found entity 1: MuxB
+Info: Found 1 design units, including 1 entities, in source file nossos componentes/muxbranch.sv
+    Info: Found entity 1: MuxBranch
+Info: Found 1 design units, including 1 entities, in source file nossos componentes/muxdatawrite.sv
+    Info: Found entity 1: MuxDataWrite
+Info: Found 1 design units, including 1 entities, in source file nossos componentes/muxinsreg.sv
+    Info: Found entity 1: MuxInsReg
+Info: Found 1 design units, including 1 entities, in source file nossos componentes/muxpc.sv
+    Info: Found entity 1: MuxPC
+Info: Found 1 design units, including 1 entities, in source file nossos componentes/muxregwrite.sv
+    Info: Found entity 1: MuxRegWrite
+Info: Found 1 design units, including 1 entities, in source file nossos componentes/muxsaidaalu.sv
+    Info: Found entity 1: MuxSaidaALU
+Info: Found 1 design units, including 1 entities, in source file nossos componentes/shiftleft2_26to28.sv
+    Info: Found entity 1: shiftLeft2_26to28
+Info: Found 1 design units, including 1 entities, in source file nossos componentes/shiftleft2_32.sv
+    Info: Found entity 1: shiftLeft2_32
+Info: Found 1 design units, including 1 entities, in source file nossos componentes/shiftleft16.sv
+    Info: Found entity 1: shiftLeft16
+Info: Found 1 design units, including 1 entities, in source file nossos componentes/signextend.sv
+    Info: Found entity 1: signExtend
+Info: Found 1 design units, including 1 entities, in source file nossos componentes/unidadecontrole.sv
+    Info: Found entity 1: unidadeControle
+Info: Found 2 design units, including 1 entities, in source file componentes do projeto/banco_reg.vhd
+    Info: Found design unit 1: Banco_reg-behavioral_arch
+    Info: Found entity 1: Banco_reg
+Info: Found 2 design units, including 1 entities, in source file componentes do projeto/instr_reg.vhd
+    Info: Found design unit 1: Instr_Reg-behavioral_arch
+    Info: Found entity 1: Instr_Reg
+Info: Found 3 design units, including 1 entities, in source file componentes do projeto/memoria.vhd
+    Info: Found design unit 1: ram_constants
+    Info: Found design unit 2: Memoria-behavioral_arch
+    Info: Found entity 1: Memoria
+Info: Found 2 design units, including 1 entities, in source file componentes do projeto/regdesloc.vhd
+    Info: Found design unit 1: RegDesloc-behavioral_arch
+    Info: Found entity 1: RegDesloc
+Info: Found 2 design units, including 1 entities, in source file componentes do projeto/registrador.vhd
+    Info: Found design unit 1: Registrador-behavioral_arch
+    Info: Found entity 1: Registrador
+Info: Found 2 design units, including 1 entities, in source file componentes do projeto/ula32.vhd
+    Info: Found design unit 1: Ula32-behavioral
+    Info: Found entity 1: Ula32
+Warning (10236): Verilog HDL Implicit Net warning at dataPath.sv(79): created implicit net for "wMDRControl"
+Info: Elaborating entity "dataPath" for the top level hierarchy
+Info: Elaborating entity "unidadeControle" for hierarchy "unidadeControle:unidadeControle"
+Info: Elaborating entity "Ula32" for hierarchy "Ula32:Ula"
+Info: Elaborating entity "Banco_reg" for hierarchy "Banco_reg:BancoReg"
+Info: Elaborating entity "Registrador" for hierarchy "Registrador:pcReg"
+Info: Elaborating entity "MuxPC" for hierarchy "MuxPC:MuxPc"
+Info: Elaborating entity "MuxBranch" for hierarchy "MuxBranch:MuxBranch"
+Info: Elaborating entity "MuxDataWrite" for hierarchy "MuxDataWrite:MuxDataWrite"
+Info: Elaborating entity "MuxA" for hierarchy "MuxA:MuxA"
+Info: Elaborating entity "MuxB" for hierarchy "MuxB:MuxB"
+Info: Elaborating entity "MuxSaidaALU" for hierarchy "MuxSaidaALU:MuxSaidaAlu"
+Info: Elaborating entity "MuxRegWrite" for hierarchy "MuxRegWrite:MuxRegWrite"
+Info: Elaborating entity "signExtend" for hierarchy "signExtend:signExtend"
+Info: Elaborating entity "shiftLeft2_32" for hierarchy "shiftLeft2_32:shiftLeft2_32"
+Info: Elaborating entity "shiftLeft16" for hierarchy "shiftLeft16:shiftLeft16"
+Info: Elaborating entity "concatInstr" for hierarchy "concatInstr:concatInstr"
+Info: Elaborating entity "shiftLeft2_26to28" for hierarchy "shiftLeft2_26to28:shiftLeft2_26to28"
+Info: Elaborating entity "concatAddress" for hierarchy "concatAddress:concatAddress"
+Info: Elaborating entity "Instr_Reg" for hierarchy "Instr_Reg:IR"
+Info: Elaborating entity "Memoria" for hierarchy "Memoria:Memoria"
+Info: Elaborating entity "LPM_RAM_DQ" for hierarchy "Memoria:Memoria|LPM_RAM_DQ:MEM"
+Info: Elaborated megafunction instantiation "Memoria:Memoria|LPM_RAM_DQ:MEM"
+Info: Instantiated megafunction "Memoria:Memoria|LPM_RAM_DQ:MEM" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "8"
+    Info: Parameter "LPM_WIDTHAD" = "8"
+    Info: Parameter "LPM_NUMWORDS" = "0"
+    Info: Parameter "LPM_INDATA" = "REGISTERED"
+    Info: Parameter "LPM_ADDRESS_CONTROL" = "REGISTERED"
+    Info: Parameter "LPM_OUTDATA" = "REGISTERED"
+    Info: Parameter "LPM_FILE" = "instrucoes.mif"
+    Info: Parameter "LPM_TYPE" = "LPM_RAM_DQ"
+    Info: Parameter "USE_EAB" = "ON"
+    Info: Parameter "INTENDED_DEVICE_FAMILY" = "UNUSED"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Elaborating entity "altram" for hierarchy "Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram"
+Warning: Assertion warning: altram does not support Cyclone II device family -- attempting best-case memory conversions, but power-up states and read during write behavior will be different for Cyclone II devices
+Info: Elaborated megafunction instantiation "Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram", which is child of megafunction instantiation "Memoria:Memoria|LPM_RAM_DQ:MEM"
+Info: Elaborating entity "altsyncram" for hierarchy "Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block"
+Info: Elaborated megafunction instantiation "Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block", which is child of megafunction instantiation "Memoria:Memoria|LPM_RAM_DQ:MEM"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_e1a1.tdf
+    Info: Found entity 1: altsyncram_e1a1
+Info: Elaborating entity "altsyncram_e1a1" for hierarchy "Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated"
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
+Warning: 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "StateOut[5]" is stuck at GND
+Info: 6 registers lost all their fanouts during netlist optimizations. The first 6 are displayed below.
+    Info: Register "unidadeControle:unidadeControle|state~18" lost all its fanouts during netlist optimizations.
+    Info: Register "unidadeControle:unidadeControle|state~19" lost all its fanouts during netlist optimizations.
+    Info: Register "unidadeControle:unidadeControle|state~20" lost all its fanouts during netlist optimizations.
+    Info: Register "unidadeControle:unidadeControle|state~21" lost all its fanouts during netlist optimizations.
+    Info: Register "unidadeControle:unidadeControle|state~22" lost all its fanouts during netlist optimizations.
+    Info: Register "unidadeControle:unidadeControle|state~23" lost all its fanouts during netlist optimizations.
+Warning: Ignored assignments for entity "projetoHardware" -- entity does not exist in design
+    Warning: Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity projetoHardware -section_id "Root Region" was ignored
+    Warning: Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity projetoHardware -section_id "Root Region" was ignored
+Info: Generated suppressed messages file C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/projetoHardware.map.smsg
+Info: Implemented 3260 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 270 output pins
+    Info: Implemented 2956 logic cells
+    Info: Implemented 32 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 40 warnings
+    Info: Peak virtual memory: 257 megabytes
+    Info: Processing ended: Fri May 05 17:46:47 2017
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:09
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/projetoHardware.map.smsg.
+
+
