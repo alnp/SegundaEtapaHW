@@ -83,6 +83,7 @@ module dataPath
 		.opcode(wInstrucao31_26),
 		.funct(wfunct),
 		.menor(wMenor),
+		//.shamt(wShamt),
 		.memWriteOrRead(wWriteOrRead),
 		.mdrControl(wMDRControl),
 		.pcControl(wPCControl),
