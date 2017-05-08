@@ -5,6 +5,7 @@ module MuxDataWrite
 	input logic [31:0] ShiftLeft16,
 	input logic [31:0] RegDeslocOut,
 	input logic [2:0] MemtoReg,
+	input logic [31:0] PCJal,
 	output logic [31:0] WriteDataMem
 );
 
@@ -17,6 +18,7 @@ always_comb
 		3'b011: WriteDataMem <= 32'b00000000000000000000000000000000;
 		3'b100: WriteDataMem <= 32'b00000000000000000000000000000001;
 		3'b101: WriteDataMem <= RegDeslocOut;
+		3'b110: WriteDataMem <= PCJal;
 		default: WriteDataMem <= ALUOutReg;
 		endcase
 	end
