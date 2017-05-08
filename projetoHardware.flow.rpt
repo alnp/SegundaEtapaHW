@@ -1,5 +1,5 @@
 Flow report for projetoHardware
-Mon May 08 17:30:30 2017
+Mon May 08 17:13:46 2017
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +------------------------------------+----------------------------------------------+
-; Flow Status                        ; Successful - Mon May 08 17:30:30 2017        ;
+; Flow Status                        ; Successful - Mon May 08 17:13:46 2017        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; projetoHardware                              ;
 ; Top-level Entity Name              ; dataPath                                     ;
@@ -63,25 +63,25 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/08/2017 17:29:46 ;
+; Start date & time ; 05/08/2017 17:12:50 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; projetoHardware     ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                      ;
-+------------------------------------+---------------------------------+-----------------+-------------+----------------+
-; Assignment Name                    ; Value                           ; Default Value   ; Entity Name ; Section Id     ;
-+------------------------------------+---------------------------------+-----------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 110073156269008.149427538504188 ; --              ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP             ; 85                              ; --              ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP             ; 0                               ; --              ; --          ; --             ;
-; PARTITION_COLOR                    ; 16764057                        ; --              ; dataPath    ; Top            ;
-; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --              ; dataPath    ; Top            ;
-; TOP_LEVEL_ENTITY                   ; dataPath                        ; projetoHardware ; --          ; --             ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                             ; --              ; --          ; eda_blast_fpga ;
-+------------------------------------+---------------------------------+-----------------+-------------+----------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                   ;
++------------------------------------+------------------------------+-----------------+-------------+----------------+
+; Assignment Name                    ; Value                        ; Default Value   ; Entity Name ; Section Id     ;
++------------------------------------+------------------------------+-----------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID              ; 121370389724.149427436903228 ; --              ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP             ; 85                           ; --              ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP             ; 0                            ; --              ; --          ; --             ;
+; PARTITION_COLOR                    ; 16764057                     ; --              ; dataPath    ; Top            ;
+; PARTITION_NETLIST_TYPE             ; SOURCE                       ; --              ; dataPath    ; Top            ;
+; TOP_LEVEL_ENTITY                   ; dataPath                     ; projetoHardware ; --          ; --             ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                          ; --              ; --          ; eda_blast_fpga ;
++------------------------------------+------------------------------+-----------------+-------------+----------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -89,11 +89,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:16     ; 1.0                     ; 283 MB              ; 00:00:16                           ;
-; Fitter                  ; 00:00:19     ; 1.0                     ; 384 MB              ; 00:00:20                           ;
-; Assembler               ; 00:00:03     ; 1.0                     ; 358 MB              ; 00:00:04                           ;
-; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 206 MB              ; 00:00:01                           ;
-; Total                   ; 00:00:39     ; --                      ; --                  ; 00:00:41                           ;
+; Analysis & Synthesis    ; 00:00:23     ; 1.0                     ; 268 MB              ; 00:00:20                           ;
+; Fitter                  ; 00:00:23     ; 1.0                     ; 361 MB              ; 00:00:23                           ;
+; Assembler               ; 00:00:04     ; 1.0                     ; 335 MB              ; 00:00:04                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 186 MB              ; 00:00:01                           ;
+; Total                   ; 00:00:51     ; --                      ; --                  ; 00:00:48                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -102,10 +102,10 @@ applicable agreement for further details.
 +-------------------------+------------------+---------------+------------+----------------+
 ; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
 +-------------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis    ; DESKTOP-OPANK2J  ; Windows Vista ; 6.2        ; x86_64         ;
-; Fitter                  ; DESKTOP-OPANK2J  ; Windows Vista ; 6.2        ; x86_64         ;
-; Assembler               ; DESKTOP-OPANK2J  ; Windows Vista ; 6.2        ; x86_64         ;
-; Classic Timing Analyzer ; DESKTOP-OPANK2J  ; Windows Vista ; 6.2        ; x86_64         ;
+; Analysis & Synthesis    ; ALESSANDRAP2B8E  ; Windows Vista ; 6.1        ; x86_64         ;
+; Fitter                  ; ALESSANDRAP2B8E  ; Windows Vista ; 6.1        ; x86_64         ;
+; Assembler               ; ALESSANDRAP2B8E  ; Windows Vista ; 6.1        ; x86_64         ;
+; Classic Timing Analyzer ; ALESSANDRAP2B8E  ; Windows Vista ; 6.1        ; x86_64         ;
 +-------------------------+------------------+---------------+------------+----------------+
 
 
