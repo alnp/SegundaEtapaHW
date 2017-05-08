@@ -1971,42 +1971,6 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 
 # end
 # entity
-unidadeControle
-# storage
-db|projetoHardware.(1).cnf
-db|projetoHardware.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-nossos componentes|unidadecontrole.sv
-66d7cf5037856dad52fc76f73e4de8c1
-9
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-unidadeControle:unidadeControle
-}
-# macro_sequence
-
-# end
-# entity
 MuxPC
 # storage
 db|projetoHardware.(5).cnf
@@ -2182,6 +2146,42 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # hierarchies {
 chooseByteUnsign:chooseByteUnsign
+}
+# macro_sequence
+
+# end
+# entity
+unidadeControle
+# storage
+db|projetoHardware.(1).cnf
+db|projetoHardware.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+nossos componentes|unidadecontrole.sv
+efb03e1572a722d2fbe2978166bbea
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+unidadeControle:unidadeControle
 }
 # macro_sequence
 
