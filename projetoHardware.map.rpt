@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projetoHardware
-Mon May 08 17:13:12 2017
+Mon May 08 17:30:01 2017
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -61,7 +61,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon May 08 17:13:12 2017        ;
+; Analysis & Synthesis Status        ; Successful - Mon May 08 17:30:01 2017        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; projetoHardware                              ;
 ; Top-level Entity Name              ; dataPath                                     ;
@@ -168,40 +168,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                 ;
-+-----------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+
-; File Name with User-Entered Path        ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                       ;
-+-----------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+
-; Nossos Componentes/MuxShift.sv          ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxShift.sv          ;
-; Nossos Componentes/concatAddress.sv     ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/concatAddress.sv     ;
-; Nossos Componentes/concatInstr.sv       ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/concatInstr.sv       ;
-; Nossos Componentes/dataPath.sv          ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/dataPath.sv          ;
-; Nossos Componentes/MuxA.sv              ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxA.sv              ;
-; Nossos Componentes/MuxB.sv              ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxB.sv              ;
-; Nossos Componentes/MuxBranch.sv         ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxBranch.sv         ;
-; Nossos Componentes/MuxDataWrite.sv      ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxDataWrite.sv      ;
-; Nossos Componentes/MuxPC.sv             ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxPC.sv             ;
-; Nossos Componentes/MuxRegWrite.sv       ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxRegWrite.sv       ;
-; Nossos Componentes/MuxSaidaALU.sv       ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/MuxSaidaALU.sv       ;
-; Nossos Componentes/shiftLeft2_26to28.sv ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/shiftLeft2_26to28.sv ;
-; Nossos Componentes/shiftLeft2_32.sv     ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/shiftLeft2_32.sv     ;
-; Nossos Componentes/shiftleft16.sv       ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/shiftleft16.sv       ;
-; Nossos Componentes/signExtend.sv        ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/signExtend.sv        ;
-; Nossos Componentes/unidadeControle.sv   ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/unidadeControle.sv   ;
-; Componentes do Projeto/Banco_reg.vhd    ; yes             ; User VHDL File                                        ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/Banco_reg.vhd    ;
-; Componentes do Projeto/Instr_Reg.vhd    ; yes             ; User VHDL File                                        ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/Instr_Reg.vhd    ;
-; Componentes do Projeto/Memoria.vhd      ; yes             ; User VHDL File                                        ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/Memoria.vhd      ;
-; Componentes do Projeto/RegDesloc.vhd    ; yes             ; User VHDL File                                        ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/RegDesloc.vhd    ;
-; Componentes do Projeto/Registrador.vhd  ; yes             ; User VHDL File                                        ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/Registrador.vhd  ;
-; Componentes do Projeto/ula32.vhd        ; yes             ; User VHDL File                                        ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Componentes do Projeto/ula32.vhd        ;
-; Nossos Componentes/chooseByteUnsign.sv  ; yes             ; User SystemVerilog HDL File                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/Nossos Componentes/chooseByteUnsign.sv  ;
-; lpm_ram_dq.tdf                          ; yes             ; Megafunction                                          ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_ram_dq.tdf                                     ;
-; altram.tdf                              ; yes             ; Megafunction                                          ; c:/altera/91sp2/quartus/libraries/megafunctions/altram.tdf                                         ;
-; altsyncram.tdf                          ; yes             ; Megafunction                                          ; c:/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf                                     ;
-; db/altsyncram_e1a1.tdf                  ; yes             ; Auto-Generated Megafunction                           ; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/db/altsyncram_e1a1.tdf                  ;
-; instrucoes.mif                          ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; instrucoes.mif                                                                                     ;
-+-----------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                 ;
++-----------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path        ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                ;
++-----------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------+
+; Nossos Componentes/MuxShift.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Nossos Componentes/MuxShift.sv          ;
+; Nossos Componentes/concatAddress.sv     ; yes             ; User SystemVerilog HDL File  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Nossos Componentes/concatAddress.sv     ;
+; Nossos Componentes/concatInstr.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Nossos Componentes/concatInstr.sv       ;
+; Nossos Componentes/dataPath.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Nossos Componentes/dataPath.sv          ;
+; Nossos Componentes/MuxA.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Nossos Componentes/MuxA.sv              ;
+; Nossos Componentes/MuxB.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Nossos Componentes/MuxB.sv              ;
+; Nossos Componentes/MuxBranch.sv         ; yes             ; User SystemVerilog HDL File  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Nossos Componentes/MuxBranch.sv         ;
+; Nossos Componentes/MuxDataWrite.sv      ; yes             ; User SystemVerilog HDL File  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Nossos Componentes/MuxDataWrite.sv      ;
+; Nossos Componentes/MuxPC.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Nossos Componentes/MuxPC.sv             ;
+; Nossos Componentes/MuxRegWrite.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Nossos Componentes/MuxRegWrite.sv       ;
+; Nossos Componentes/MuxSaidaALU.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Nossos Componentes/MuxSaidaALU.sv       ;
+; Nossos Componentes/shiftLeft2_26to28.sv ; yes             ; User SystemVerilog HDL File  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Nossos Componentes/shiftLeft2_26to28.sv ;
+; Nossos Componentes/shiftLeft2_32.sv     ; yes             ; User SystemVerilog HDL File  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Nossos Componentes/shiftLeft2_32.sv     ;
+; Nossos Componentes/shiftleft16.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Nossos Componentes/shiftleft16.sv       ;
+; Nossos Componentes/signExtend.sv        ; yes             ; User SystemVerilog HDL File  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Nossos Componentes/signExtend.sv        ;
+; Nossos Componentes/unidadeControle.sv   ; yes             ; User SystemVerilog HDL File  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Nossos Componentes/unidadeControle.sv   ;
+; Componentes do Projeto/Banco_reg.vhd    ; yes             ; User VHDL File               ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Componentes do Projeto/Banco_reg.vhd    ;
+; Componentes do Projeto/Instr_Reg.vhd    ; yes             ; User VHDL File               ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Componentes do Projeto/Instr_Reg.vhd    ;
+; Componentes do Projeto/Memoria.vhd      ; yes             ; User VHDL File               ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Componentes do Projeto/Memoria.vhd      ;
+; Componentes do Projeto/RegDesloc.vhd    ; yes             ; User VHDL File               ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Componentes do Projeto/RegDesloc.vhd    ;
+; Componentes do Projeto/Registrador.vhd  ; yes             ; User VHDL File               ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Componentes do Projeto/Registrador.vhd  ;
+; Componentes do Projeto/ula32.vhd        ; yes             ; User VHDL File               ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Componentes do Projeto/ula32.vhd        ;
+; Nossos Componentes/chooseByteUnsign.sv  ; yes             ; User SystemVerilog HDL File  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/Nossos Componentes/chooseByteUnsign.sv  ;
+; lpm_ram_dq.tdf                          ; yes             ; Megafunction                 ; f:/hw/projeto/q/quartus/libraries/megafunctions/lpm_ram_dq.tdf                              ;
+; altram.tdf                              ; yes             ; Megafunction                 ; f:/hw/projeto/q/quartus/libraries/megafunctions/altram.tdf                                  ;
+; altsyncram.tdf                          ; yes             ; Megafunction                 ; f:/hw/projeto/q/quartus/libraries/megafunctions/altsyncram.tdf                              ;
+; db/altsyncram_e1a1.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/db/altsyncram_e1a1.tdf                  ;
++-----------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -241,36 +240,36 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
 ; |dataPath                                       ; 2538 (2)          ; 1285 (0)     ; 8192        ; 0            ; 0       ; 0         ; 272  ; 0            ; |dataPath                                                                                                           ; work         ;
 ;    |Banco_reg:BancoReg|                         ; 1392 (1392)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Banco_reg:BancoReg                                                                                        ; work         ;
-;    |Instr_Reg:IR|                               ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Instr_Reg:IR                                                                                              ; work         ;
+;    |Instr_Reg:IR|                               ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Instr_Reg:IR                                                                                              ;              ;
 ;    |Memoria:Memoria|                            ; 23 (23)           ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria                                                                                           ; work         ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ; work         ;
 ;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ; work         ;
 ;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ; work         ;
-;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ; work         ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ;              ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ;              ;
+;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ;              ;
 ;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two                                                                   ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ; work         ;
-;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM                                                                            ;              ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ; work         ;
+;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ;              ;
+;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM                                                                            ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ;              ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
 ;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated            ; work         ;
 ;    |MuxA:MuxA|                                  ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxA:MuxA                                                                                                 ; work         ;
-;    |MuxB:MuxB|                                  ; 47 (47)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxB:MuxB                                                                                                 ; work         ;
+;    |MuxB:MuxB|                                  ; 47 (47)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxB:MuxB                                                                                                 ;              ;
 ;    |MuxDataWrite:MuxDataWrite|                  ; 101 (101)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxDataWrite:MuxDataWrite                                                                                 ; work         ;
-;    |MuxPC:MuxPc|                                ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxPC:MuxPc                                                                                               ;              ;
+;    |MuxPC:MuxPc|                                ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxPC:MuxPc                                                                                               ; work         ;
 ;    |MuxRegWrite:MuxRegWrite|                    ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxRegWrite:MuxRegWrite                                                                                   ; work         ;
 ;    |MuxSaidaALU:MuxSaidaAlu|                    ; 56 (56)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxSaidaALU:MuxSaidaAlu                                                                                   ; work         ;
 ;    |MuxShift:MuxShift|                          ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxShift:MuxShift                                                                                         ;              ;
-;    |RegDesloc:RegDesloc|                        ; 492 (492)         ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|RegDesloc:RegDesloc                                                                                       ; work         ;
+;    |RegDesloc:RegDesloc|                        ; 492 (492)         ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|RegDesloc:RegDesloc                                                                                       ;              ;
 ;    |Registrador:ALUOut|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:ALUOut                                                                                        ; work         ;
 ;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:A                                                                                             ; work         ;
-;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:B                                                                                             ;              ;
-;    |Registrador:Mem|                            ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:Mem                                                                                           ;              ;
+;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:B                                                                                             ; work         ;
+;    |Registrador:Mem|                            ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:Mem                                                                                           ; work         ;
 ;    |Registrador:pcReg|                          ; 5 (5)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:pcReg                                                                                         ;              ;
 ;    |Ula32:Ula|                                  ; 199 (199)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Ula32:Ula                                                                                                 ;              ;
 ;    |unidadeControle:unidadeControle|            ; 146 (146)         ; 37 (37)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|unidadeControle:unidadeControle                                                                           ;              ;
@@ -603,7 +602,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Mon May 08 17:12:49 2017
+    Info: Processing started: Mon May 08 17:29:45 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projetoHardware -c projetoHardware
 Info: Found 1 design units, including 1 entities, in source file nossos componentes/muxshift.sv
     Info: Found entity 1: MuxShift
@@ -755,22 +754,22 @@ Info: 7 registers lost all their fanouts during netlist optimizations. The first
 Warning: Ignored assignments for entity "projetoHardware" -- entity does not exist in design
     Warning: Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity projetoHardware -section_id "Root Region" was ignored
     Warning: Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity projetoHardware -section_id "Root Region" was ignored
-Info: Generated suppressed messages file C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/projetoHardware.map.smsg
+Info: Generated suppressed messages file C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/projetoHardware.map.smsg
 Info: Implemented 3964 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 270 output pins
     Info: Implemented 3660 logic cells
     Info: Implemented 32 RAM segments
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 42 warnings
-    Info: Peak virtual memory: 268 megabytes
-    Info: Processing ended: Mon May 08 17:13:12 2017
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Peak virtual memory: 283 megabytes
+    Info: Processing ended: Mon May 08 17:30:01 2017
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:16
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/projetoHardware.map.smsg.
+The suppressed messages can be found in C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/projetoHardware.map.smsg.
 
 

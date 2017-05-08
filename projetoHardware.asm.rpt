@@ -1,5 +1,5 @@
 Assembler report for projetoHardware
-Mon May 08 17:13:43 2017
+Mon May 08 17:30:28 2017
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -10,8 +10,8 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/projetoHardware.sof
-  6. Assembler Device Options: C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/projetoHardware.pof
+  5. Assembler Device Options: C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/projetoHardware.sof
+  6. Assembler Device Options: C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/projetoHardware.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon May 08 17:13:43 2017 ;
+; Assembler Status      ; Successful - Mon May 08 17:30:28 2017 ;
 ; Revision Name         ; projetoHardware                       ;
 ; Top-level Entity Name ; dataPath                              ;
 ; Family                ; Cyclone II                            ;
@@ -78,37 +78,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+--------------------------------------------------------------------------------+
-; Assembler Generated Files                                                      ;
-+--------------------------------------------------------------------------------+
-; File Name                                                                      ;
-+--------------------------------------------------------------------------------+
-; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/projetoHardware.sof ;
-; C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/projetoHardware.pof ;
-+--------------------------------------------------------------------------------+
++-------------------------------------------------------------------------+
+; Assembler Generated Files                                               ;
++-------------------------------------------------------------------------+
+; File Name                                                               ;
++-------------------------------------------------------------------------+
+; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/projetoHardware.sof ;
+; C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/projetoHardware.pof ;
++-------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/projetoHardware.sof ;
-+----------------+-----------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                 ;
-+----------------+-----------------------------------------------------------------------------------------+
-; Device         ; EP2C70F896C6                                                                            ;
-; JTAG usercode  ; 0xFFFFFFFF                                                                              ;
-; Checksum       ; 0x008B6F3E                                                                              ;
-+----------------+-----------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/projetoHardware.sof ;
++----------------+----------------------------------------------------------------------------------+
+; Option         ; Setting                                                                          ;
++----------------+----------------------------------------------------------------------------------+
+; Device         ; EP2C70F896C6                                                                     ;
+; JTAG usercode  ; 0xFFFFFFFF                                                                       ;
+; Checksum       ; 0x008B6F3E                                                                       ;
++----------------+----------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/projetoHardware.pof ;
-+--------------------+-------------------------------------------------------------------------------------+
-; Option             ; Setting                                                                             ;
-+--------------------+-------------------------------------------------------------------------------------+
-; Device             ; EPCS16                                                                              ;
-; JTAG usercode      ; 0x00000000                                                                          ;
-; Checksum           ; 0x183DDDB4                                                                          ;
-; Compression Ratio  ; 3                                                                                   ;
-+--------------------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/projetoHardware.pof ;
++--------------------+------------------------------------------------------------------------------+
+; Option             ; Setting                                                                      ;
++--------------------+------------------------------------------------------------------------------+
+; Device             ; EPCS16                                                                       ;
+; JTAG usercode      ; 0x00000000                                                                   ;
+; Checksum           ; 0x183DDDB4                                                                   ;
+; Compression Ratio  ; 3                                                                            ;
++--------------------+------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Mon May 08 17:13:39 2017
+    Info: Processing started: Mon May 08 17:30:25 2017
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off projetoHardware -c projetoHardware
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 335 megabytes
-    Info: Processing ended: Mon May 08 17:13:43 2017
-    Info: Elapsed time: 00:00:04
+    Info: Peak virtual memory: 358 megabytes
+    Info: Processing ended: Mon May 08 17:30:28 2017
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:04
 
 

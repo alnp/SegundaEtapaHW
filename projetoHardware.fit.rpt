@@ -1,5 +1,5 @@
 Fitter report for projetoHardware
-Mon May 08 17:13:37 2017
+Mon May 08 17:30:22 2017
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                    ;
 +------------------------------------+----------------------------------------------+
-; Fitter Status                      ; Successful - Mon May 08 17:13:37 2017        ;
+; Fitter Status                      ; Successful - Mon May 08 17:30:22 2017        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; projetoHardware                              ;
 ; Top-level Entity Name              ; dataPath                                     ;
@@ -181,7 +181,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/alessandrapereira/Documents/GitHub/SegundaEtapaHW/projetoHardware.pin.
+The pin-out file can be found in C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/projetoHardware.pin.
 
 
 +---------------------------------------------------------------------------+
@@ -1489,36 +1489,36 @@ Note: User assignments will override these defaults. The user specified values a
 +-------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------------+--------------+
 ; |dataPath                                       ; 2605 (2)    ; 1285 (0)                  ; 0 (0)         ; 8192        ; 4    ; 0            ; 0       ; 0         ; 272  ; 0            ; 1320 (2)     ; 66 (0)            ; 1219 (0)         ; |dataPath                                                                                                           ; work         ;
 ;    |Banco_reg:BancoReg|                         ; 1489 (1489) ; 1024 (1024)               ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 393 (393)    ; 65 (65)           ; 1031 (1031)      ; |dataPath|Banco_reg:BancoReg                                                                                        ; work         ;
-;    |Instr_Reg:IR|                               ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 31 (31)          ; |dataPath|Instr_Reg:IR                                                                                              ; work         ;
+;    |Instr_Reg:IR|                               ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 31 (31)          ; |dataPath|Instr_Reg:IR                                                                                              ;              ;
 ;    |Memoria:Memoria|                            ; 23 (23)     ; 0 (0)                     ; 0 (0)         ; 8192        ; 4    ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria                                                                                           ; work         ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
 ;          |altram:sram|                          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ; work         ;
 ;                |altsyncram_e1a1:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ; work         ;
 ;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
-;          |altram:sram|                          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ; work         ;
-;                |altsyncram_e1a1:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ; work         ;
+;          |altram:sram|                          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ;              ;
+;             |altsyncram:ram_block|              ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ;              ;
+;                |altsyncram_e1a1:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ;              ;
 ;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two                                                                   ; work         ;
 ;          |altram:sram|                          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_e1a1:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ; work         ;
-;       |lpm_ram_dq:MEM|                          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM                                                                            ;              ;
+;             |altsyncram:ram_block|              ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ; work         ;
+;                |altsyncram_e1a1:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ;              ;
+;       |lpm_ram_dq:MEM|                          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM                                                                            ; work         ;
 ;          |altram:sram|                          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ;              ;
+;             |altsyncram:ram_block|              ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
 ;                |altsyncram_e1a1:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated            ; work         ;
 ;    |MuxA:MuxA|                                  ; 32 (32)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; |dataPath|MuxA:MuxA                                                                                                 ; work         ;
-;    |MuxB:MuxB|                                  ; 47 (47)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 38 (38)      ; 0 (0)             ; 9 (9)            ; |dataPath|MuxB:MuxB                                                                                                 ; work         ;
+;    |MuxB:MuxB|                                  ; 47 (47)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 38 (38)      ; 0 (0)             ; 9 (9)            ; |dataPath|MuxB:MuxB                                                                                                 ;              ;
 ;    |MuxDataWrite:MuxDataWrite|                  ; 101 (101)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 37 (37)      ; 0 (0)             ; 64 (64)          ; |dataPath|MuxDataWrite:MuxDataWrite                                                                                 ; work         ;
-;    |MuxPC:MuxPc|                                ; 32 (32)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; |dataPath|MuxPC:MuxPc                                                                                               ;              ;
+;    |MuxPC:MuxPc|                                ; 32 (32)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; |dataPath|MuxPC:MuxPc                                                                                               ; work         ;
 ;    |MuxRegWrite:MuxRegWrite|                    ; 6 (6)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 1 (1)            ; |dataPath|MuxRegWrite:MuxRegWrite                                                                                   ; work         ;
 ;    |MuxSaidaALU:MuxSaidaAlu|                    ; 56 (56)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 28 (28)          ; |dataPath|MuxSaidaALU:MuxSaidaAlu                                                                                   ; work         ;
 ;    |MuxShift:MuxShift|                          ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; |dataPath|MuxShift:MuxShift                                                                                         ;              ;
-;    |RegDesloc:RegDesloc|                        ; 492 (492)   ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 457 (457)    ; 0 (0)             ; 35 (35)          ; |dataPath|RegDesloc:RegDesloc                                                                                       ; work         ;
+;    |RegDesloc:RegDesloc|                        ; 492 (492)   ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 457 (457)    ; 0 (0)             ; 35 (35)          ; |dataPath|RegDesloc:RegDesloc                                                                                       ;              ;
 ;    |Registrador:ALUOut|                         ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; |dataPath|Registrador:ALUOut                                                                                        ; work         ;
 ;    |Registrador:A|                              ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; |dataPath|Registrador:A                                                                                             ; work         ;
-;    |Registrador:B|                              ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; |dataPath|Registrador:B                                                                                             ;              ;
-;    |Registrador:Mem|                            ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; |dataPath|Registrador:Mem                                                                                           ;              ;
+;    |Registrador:B|                              ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; |dataPath|Registrador:B                                                                                             ; work         ;
+;    |Registrador:Mem|                            ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; |dataPath|Registrador:Mem                                                                                           ; work         ;
 ;    |Registrador:pcReg|                          ; 33 (33)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 32 (32)          ; |dataPath|Registrador:pcReg                                                                                         ;              ;
 ;    |Ula32:Ula|                                  ; 199 (199)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 166 (166)    ; 0 (0)             ; 33 (33)          ; |dataPath|Ula32:Ula                                                                                                 ;              ;
 ;    |unidadeControle:unidadeControle|            ; 148 (148)   ; 37 (37)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 101 (101)    ; 0 (0)             ; 47 (47)          ; |dataPath|unidadeControle:unidadeControle                                                                           ;              ;
@@ -2169,7 +2169,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Mon May 08 17:13:14 2017
+    Info: Processing started: Mon May 08 17:30:03 2017
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off projetoHardware -c projetoHardware
 Info: Selected device EP2C70F896C6 for design "projetoHardware"
 Info: Low junction temperature is 0 degrees C
@@ -2483,7 +2483,7 @@ Info: I/O bank details before I/O pin placement
         Info: I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  80 pins available
         Info: I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  74 pins available
         Info: I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  72 pins available
-Info: Fitter preparation operations ending: elapsed time is 00:00:01
+Info: Fitter preparation operations ending: elapsed time is 00:00:02
 Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
@@ -2537,7 +2537,7 @@ Info: Estimated most critical path is register to register delay of 33.033 ns
 Info: Fitter routing operations beginning
 Info: Average interconnect usage is 3% of the available device resources
     Info: Peak interconnect usage is 51% of the available device resources in the region that extends from location X36_Y26 to location X47_Y38
-Info: Fitter routing operations ending: elapsed time is 00:00:06
+Info: Fitter routing operations ending: elapsed time is 00:00:07
 Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info: Optimizations that may affect the design's routability were skipped
     Info: Optimizations that may affect the design's timing were skipped
@@ -2817,9 +2817,9 @@ Info: Delay annotation completed successfully
 Info: Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
 Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info: Quartus II Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 361 megabytes
-    Info: Processing ended: Mon May 08 17:13:38 2017
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Peak virtual memory: 384 megabytes
+    Info: Processing ended: Mon May 08 17:30:23 2017
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:21
 
 
