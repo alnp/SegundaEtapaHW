@@ -46,7 +46,7 @@ module dataPath
 	logic [31:0] wRegBOut;	
 	logic wAluSrcA;
 	logic [1:0] wAluSrcB;
-	logic [2:0] wMemToReg;
+	logic [3:0] wMemToReg;
 	logic [2:0] wShiftControl;
 	logic [31:0] wWriteData;
 	logic [1:0] wRegDst;
@@ -73,6 +73,7 @@ module dataPath
 	logic wEPCWrite;
 	logic wEPCOut;
 	logic [31:0] wChooseByteUOut;
+	logic [31:0] wChooseHalfOut;
 	
 	
 	assign wAndPCControl = wPCCond & wResult;
@@ -206,6 +207,8 @@ module dataPath
 		.MemtoReg(wMemToReg),
 		.RegDeslocOut(wRegDeslocOut),
 		.PCJal(wPc),
+		.Byte(wChooseByteUOut),
+		.Half(wChooseHalfOut),
 		.WriteDataMem(wWriteData)
 );
 	
@@ -314,6 +317,11 @@ module dataPath
 	chooseByteUnsign chooseByteUnsign
 	(	.in(wMDROut),
 		.out(wChooseByteUOut)
+		);
+	
+	chooseHalfUnsign chooseHalfUnsign
+	(	.in(wMDROut),
+		.out(wChooseHalfOut)
 		);
 	
 	assign StateOut = wState;

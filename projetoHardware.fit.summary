@@ -1,14 +1,14 @@
-Fitter Status : Successful - Mon May 08 18:00:34 2017
+Fitter Status : Successful - Mon May 08 20:27:11 2017
 Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
 Revision Name : projetoHardware
 Top-level Entity Name : dataPath
 Family : Cyclone II
 Device : EP2C70F896C6
 Timing Models : Final
-Total logic elements : 2,611 / 68,416 ( 4 % )
-    Total combinational functions : 2,533 / 68,416 ( 4 % )
-    Dedicated logic registers : 1,285 / 68,416 ( 2 % )
-Total registers : 1285
+Total logic elements : 2,619 / 68,416 ( 4 % )
+    Total combinational functions : 2,594 / 68,416 ( 4 % )
+    Dedicated logic registers : 1,292 / 68,416 ( 2 % )
+Total registers : 1292
 Total pins : 272 / 622 ( 44 % )
 Total virtual pins : 0
 Total memory bits : 8,192 / 1,152,000 ( < 1 % )
