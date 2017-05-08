@@ -155,6 +155,7 @@ module unidadeControle
 			J: state <= MemoryRead;
 			JR: state <= MemoryRead;
 			Addiu: state <= WriteRegAluImm;
+			WriteRegAluImm: state <= MemoryRead;
 			ShiftCarrega:
 			begin
 				case(funct)
@@ -832,24 +833,24 @@ module unidadeControle
 				shamtOrRs = 1'b0;
 				shiftControl = 3'b000;
 				mdrControl = 1'b0;
-				memToReg = 2'b01;
 				pcCond = 1'b0;
 				origPC = 3'b000;
-				regDst = 2'b00;
-				regWrite = 1'b0;
+				aluSrcA = 1'b1;
+				aluSrcB = 2'b10;
+				writeA = 1'b1;
+				writeB = 1'b0;
 				bneORbeq = 1'b0;
 				IorD = 2'b01;
-				
+			
 				memWriteOrRead = 1'b0;
 				pcControl = 1'b0;
-				irWrite = 1'b0;
-				
-				aluControl = 3'b001;
-				aluSrcA = 1'b1;
-				aluSrcB = 2'b00;
-				writeA = 1'b0;
-				writeB = 1'b0;
-				regAluControl = 1'b1;
+				irWrite = 1'b1;
+				aluControl = 3'b000;
+			
+				regAluControl = 1'b0;
+				regDst = 2'b00;
+				regWrite = 1'b1;
+				memToReg = 3'b000;
 				estado <= state;
 			end
 			Addiu:
@@ -872,7 +873,7 @@ module unidadeControle
 				
 				aluControl = 3'b001;
 				aluSrcA = 1'b1;
-				aluSrcB = 2'b00;
+				aluSrcB = 2'b10;
 				writeA = 1'b0;
 				writeB = 1'b0;
 				regAluControl = 1'b1;
