@@ -138,9 +138,17 @@
 					
 				endcase
 			end
-			Add: state <= WriteRegAlu;
+			Add:
+			begin
+				if(overflow) state <= excessao;
+				else state <= WriteRegAlu;
+			end
 			And: state <= WriteRegAlu;
-			Sub: state <= WriteRegAlu;
+			Sub: 
+			begin
+				if(overflow) state <= excecao;
+				else state <= WriteRegAlu;
+			end	
 			Xor: state <= WriteRegAlu;
 			Break: state <= Break;
 			Nop: state <= MemoryRead;
@@ -177,6 +185,8 @@
 			SltWrite: state <= MemoryRead;
 			JalEscreveR31: state <= Jal;
 			Jal: state <= MemoryRead;
+			Addu: state <= WriteRegAlu;
+			Subu: state <= WriteRegAlu;
 			endcase
 		end
 	end
