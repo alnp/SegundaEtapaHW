@@ -49,7 +49,7 @@ module dataPath
 	logic [2:0] wMemToReg;
 	logic [2:0] wShiftControl;
 	logic [31:0] wWriteData;
-	logic wRegDst;
+	logic [1:0] wRegDst;
 	logic wRegWrite;
 	logic wPCCond;
 	logic wBneORBeq;
@@ -83,7 +83,7 @@ module dataPath
 		.opcode(wInstrucao31_26),
 		.funct(wfunct),
 		.menor(wMenor),
-		//.shamt(wShamt),
+		.shamt(wShamt),
 		.memWriteOrRead(wWriteOrRead),
 		.mdrControl(wMDRControl),
 		.pcControl(wPCControl),
@@ -191,6 +191,7 @@ module dataPath
 		.ShiftLeft16(wShiftLeft16),
 		.MemtoReg(wMemToReg),
 		.RegDeslocOut(wRegDeslocOut),
+		.PCJal(wPc),
 		.WriteDataMem(wWriteData)
 );
 	
