@@ -17,7 +17,7 @@ module dataPath
 	
 	logic [31:0] winPC;
 	logic [31:0] wPc;
-	logic [1:0] wPCSource;
+	logic [2:0] wPCSource;
 	logic [31:0] wALU;
 	logic [31:0] wALUOut;
 	logic [31:0] wAddress;
@@ -32,7 +32,7 @@ module dataPath
 	logic [4:0] wInstrucao20_16;
 	logic [16:0] wInstrucao15_0;
 	logic [4:0] wInstrucao15_11;
-	logic wIorD;
+	logic [1:0] wIorD;
 	logic [5:0] wfunct;
 	logic [4:0] wWriteReg;
 	logic wRegALUControl;
@@ -69,6 +69,10 @@ module dataPath
 	logic [4:0] wShamt;
 	logic wShamtOrRs;
 	logic [31:0] wN;
+	logic wOverflow;
+	logic wEPCWrite;
+	logic wEPCOut;
+	logic [31:0] wChooseByteUOut;
 	
 	
 	assign wAndPCControl = wPCCond & wResult;
@@ -84,6 +88,7 @@ module dataPath
 		.funct(wfunct),
 		.menor(wMenor),
 		.shamt(wShamt),
+		.overflow(wOverflow),
 		.memWriteOrRead(wWriteOrRead),
 		.mdrControl(wMDRControl),
 		.pcControl(wPCControl),
@@ -113,6 +118,7 @@ module dataPath
 		.B(wBOut),
 		.Seletor(wALUControl),
 		.S(wALU),
+		.Overflow(wOverflow),
 		.z(wZero),
 		.Menor(wMenor)
 		);
@@ -136,6 +142,14 @@ module dataPath
 		.Load(wOrPCControl),
 		.Entrada(winPC),
 		.Saida(wPc)
+		);
+		
+	Registrador EPC
+	(	.Clk(clock),
+		.Reset(res),
+		.Load(wEPCWrite),
+		.Entrada(wAlu),
+		.Saida(wEPCOut)
 		);
 		
 	Registrador Mem
@@ -217,6 +231,8 @@ module dataPath
 		.RegDesloc(wJumAddress), // nome fio desloc jump
 		.PCSource(wPCSource),
 		.JR(wRegAOut),
+		.EPC(wEPCOut),
+		.RotinaDeTratamentoAddress(wChooseByteUOut),
 		.inPC(winPC)
 	);
 	
@@ -294,6 +310,11 @@ module dataPath
 		.ShamtOrRs(wShamtOrRs),
 		.N(wN)
 	);
+	
+	chooseByteUnsign chooseByteUnsign
+	(	.in(wMDROut),
+		.out(wChooseByteUOut)
+		);
 	
 	assign StateOut = wState;
 	assign MemData = wMemDataOut;
