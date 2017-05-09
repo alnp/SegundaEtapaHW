@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 36.314 ns
-From           : unidadeControle:unidadeControle|state.WriteRegAlu
-To             : WriteDataReg[30]
+Actual Time    : 38.472 ns
+From           : unidadeControle:unidadeControle|state.LW_step5
+To             : WriteDataReg[0]
 From Clock     : clock
 To Clock       : --
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clock'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 33.38 MHz ( period = 29.961 ns )
-From           : unidadeControle:unidadeControle|state.WriteRegAlu
-To             : Banco_reg:BancoReg|Reg15[0]
+Actual Time    : 31.18 MHz ( period = 32.071 ns )
+From           : unidadeControle:unidadeControle|state.LW_step5
+To             : Banco_reg:BancoReg|Reg1[4]
 From Clock     : clock
 To Clock       : clock
 Failed Paths   : 0
