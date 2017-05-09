@@ -1,5 +1,5 @@
 Flow report for projetoHardware
-Mon May 08 22:02:56 2017
+Mon May 08 22:26:01 2017
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +------------------------------------+----------------------------------------------+
-; Flow Status                        ; Successful - Mon May 08 22:02:56 2017        ;
+; Flow Status                        ; Successful - Mon May 08 22:26:01 2017        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; projetoHardware                              ;
 ; Top-level Entity Name              ; dataPath                                     ;
@@ -47,10 +47,10 @@ applicable agreement for further details.
 ; Timing Models                      ; Final                                        ;
 ; Met timing requirements            ; Yes                                          ;
 ; Total logic elements               ; 2,685 / 68,416 ( 4 % )                       ;
-;     Total combinational functions  ; 2,613 / 68,416 ( 4 % )                       ;
+;     Total combinational functions  ; 2,624 / 68,416 ( 4 % )                       ;
 ;     Dedicated logic registers      ; 1,292 / 68,416 ( 2 % )                       ;
 ; Total registers                    ; 1292                                         ;
-; Total pins                         ; 272 / 622 ( 44 % )                           ;
+; Total pins                         ; 336 / 622 ( 54 % )                           ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 8,192 / 1,152,000 ( < 1 % )                  ;
 ; Embedded Multiplier 9-bit elements ; 0 / 300 ( 0 % )                              ;
@@ -63,7 +63,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/08/2017 22:02:10 ;
+; Start date & time ; 05/08/2017 22:25:10 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; projetoHardware     ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ applicable agreement for further details.
 +------------------------------------+---------------------------------+-----------------+-------------+----------------+
 ; Assignment Name                    ; Value                           ; Default Value   ; Entity Name ; Section Id     ;
 +------------------------------------+---------------------------------+-----------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 110073156269008.149429173003624 ; --              ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 110073156269008.149429311010288 ; --              ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP             ; 85                              ; --              ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP             ; 0                               ; --              ; --          ; --             ;
 ; PARTITION_COLOR                    ; 16764057                        ; --              ; dataPath    ; Top            ;
@@ -89,11 +89,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:16     ; 1.0                     ; 283 MB              ; 00:00:17                           ;
-; Fitter                  ; 00:00:21     ; 1.0                     ; 385 MB              ; 00:00:21                           ;
-; Assembler               ; 00:00:04     ; 1.0                     ; 358 MB              ; 00:00:04                           ;
+; Analysis & Synthesis    ; 00:00:17     ; 1.0                     ; 282 MB              ; 00:00:17                           ;
+; Fitter                  ; 00:00:26     ; 1.0                     ; 385 MB              ; 00:00:27                           ;
+; Assembler               ; 00:00:03     ; 1.0                     ; 358 MB              ; 00:00:04                           ;
 ; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 207 MB              ; 00:00:01                           ;
-; Total                   ; 00:00:42     ; --                      ; --                  ; 00:00:43                           ;
+; Total                   ; 00:00:47     ; --                      ; --                  ; 00:00:49                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

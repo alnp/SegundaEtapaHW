@@ -1,6 +1,6 @@
 module dataPath 
 (	input logic clock, res,
-	output logic [5:0] StateOut,
+	output logic [5:0] Estado,
 	output logic IRWrite,
 	output logic [31:0] Address,
 	output logic [31:0] MemData,
@@ -12,7 +12,9 @@ module dataPath
 	output logic [31:0] AluOut,
 	output logic [31:0] PC,
 	output logic wr,
-	output logic RegWrite
+	output logic RegWrite,
+	output logic [31:0] Reg_Desloc,
+	output logic [31:0] EPC
 	);
 	
 	logic [31:0] winPC;
@@ -144,7 +146,7 @@ module dataPath
 		.Saida(wPc)
 		);
 		
-	Registrador EPC
+	Registrador EPCReg
 	(	.Clk(clock),
 		.Reset(res),
 		.Load(wEPCWrite),
@@ -316,7 +318,7 @@ module dataPath
 		.out(wChooseByteUOut)
 		);
 	
-	assign StateOut = wState;
+	assign Estado = wState;
 	assign MemData = wMemDataOut;
 	assign Address = wAddress;
 	assign WriteDataMem = wRegBOut;

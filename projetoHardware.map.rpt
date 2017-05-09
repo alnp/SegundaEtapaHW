@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projetoHardware
-Mon May 08 22:02:26 2017
+Mon May 08 22:25:27 2017
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -31,7 +31,7 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  23. Port Connectivity Checks: "concatInstr:concatInstr"
  24. Port Connectivity Checks: "signExtend:signExtend"
  25. Port Connectivity Checks: "MuxSaidaALU:MuxSaidaAlu"
- 26. Port Connectivity Checks: "Registrador:EPC"
+ 26. Port Connectivity Checks: "Registrador:EPCReg"
  27. Port Connectivity Checks: "Ula32:Ula"
  28. Port Connectivity Checks: "unidadeControle:unidadeControle"
  29. Analysis & Synthesis Messages
@@ -61,16 +61,16 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon May 08 22:02:26 2017        ;
+; Analysis & Synthesis Status        ; Successful - Mon May 08 22:25:27 2017        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; projetoHardware                              ;
 ; Top-level Entity Name              ; dataPath                                     ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 3,675                                        ;
-;     Total combinational functions  ; 2,612                                        ;
+; Total logic elements               ; 3,680                                        ;
+;     Total combinational functions  ; 2,623                                        ;
 ;     Dedicated logic registers      ; 1,292                                        ;
 ; Total registers                    ; 1292                                         ;
-; Total pins                         ; 272                                          ;
+; Total pins                         ; 336                                          ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 8,192                                        ;
 ; Embedded Multiplier 9-bit elements ; 0                                            ;
@@ -208,28 +208,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 3,675 ;
+; Estimated Total logic elements              ; 3,680 ;
 ;                                             ;       ;
-; Total combinational functions               ; 2612  ;
+; Total combinational functions               ; 2623  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 2019  ;
-;     -- 3 input functions                    ; 542   ;
-;     -- <=2 input functions                  ; 51    ;
+;     -- 4 input functions                    ; 2055  ;
+;     -- 3 input functions                    ; 512   ;
+;     -- <=2 input functions                  ; 56    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 2592  ;
+;     -- normal mode                          ; 2603  ;
 ;     -- arithmetic mode                      ; 20    ;
 ;                                             ;       ;
 ; Total registers                             ; 1292  ;
 ;     -- Dedicated logic registers            ; 1292  ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 272   ;
+; I/O pins                                    ; 336   ;
 ; Total memory bits                           ; 8192  ;
 ; Maximum fan-out node                        ; clock ;
 ; Maximum fan-out                             ; 1324  ;
-; Total fan-out                               ; 15611 ;
-; Average fan-out                             ; 3.71  ;
+; Total fan-out                               ; 15663 ;
+; Average fan-out                             ; 3.66  ;
 +---------------------------------------------+-------+
 
 
@@ -238,17 +238,17 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                 ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
-; |dataPath                                       ; 2612 (2)          ; 1292 (0)     ; 8192        ; 0            ; 0       ; 0         ; 272  ; 0            ; |dataPath                                                                                                           ; work         ;
-;    |Banco_reg:BancoReg|                         ; 1392 (1392)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Banco_reg:BancoReg                                                                                        ;              ;
+; |dataPath                                       ; 2623 (2)          ; 1292 (0)     ; 8192        ; 0            ; 0       ; 0         ; 336  ; 0            ; |dataPath                                                                                                           ; work         ;
+;    |Banco_reg:BancoReg|                         ; 1392 (1392)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Banco_reg:BancoReg                                                                                        ; work         ;
 ;    |Instr_Reg:IR|                               ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Instr_Reg:IR                                                                                              ; work         ;
 ;    |Memoria:Memoria|                            ; 23 (23)           ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria                                                                                           ; work         ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ; work         ;
 ;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated   ;              ;
 ;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ;              ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ; work         ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ;              ;
 ;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated ; work         ;
 ;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ;              ;
@@ -259,19 +259,19 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
 ;                |altsyncram_e1a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_e1a1:auto_generated            ; work         ;
 ;    |MuxA:MuxA|                                  ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxA:MuxA                                                                                                 ; work         ;
-;    |MuxB:MuxB|                                  ; 47 (47)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxB:MuxB                                                                                                 ; work         ;
+;    |MuxB:MuxB|                                  ; 52 (52)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxB:MuxB                                                                                                 ; work         ;
 ;    |MuxDataWrite:MuxDataWrite|                  ; 101 (101)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxDataWrite:MuxDataWrite                                                                                 ; work         ;
 ;    |MuxPC:MuxPc|                                ; 39 (39)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxPC:MuxPc                                                                                               ; work         ;
 ;    |MuxRegWrite:MuxRegWrite|                    ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxRegWrite:MuxRegWrite                                                                                   ; work         ;
-;    |MuxSaidaALU:MuxSaidaAlu|                    ; 85 (85)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxSaidaALU:MuxSaidaAlu                                                                                   ; work         ;
+;    |MuxSaidaALU:MuxSaidaAlu|                    ; 92 (92)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxSaidaALU:MuxSaidaAlu                                                                                   ; work         ;
 ;    |MuxShift:MuxShift|                          ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|MuxShift:MuxShift                                                                                         ; work         ;
 ;    |RegDesloc:RegDesloc|                        ; 493 (493)         ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|RegDesloc:RegDesloc                                                                                       ; work         ;
 ;    |Registrador:ALUOut|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:ALUOut                                                                                        ; work         ;
 ;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:A                                                                                             ; work         ;
 ;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:B                                                                                             ; work         ;
 ;    |Registrador:Mem|                            ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:Mem                                                                                           ; work         ;
-;    |Registrador:pcReg|                          ; 15 (15)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:pcReg                                                                                         ; work         ;
-;    |Ula32:Ula|                                  ; 204 (204)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Ula32:Ula                                                                                                 ; work         ;
+;    |Registrador:pcReg|                          ; 7 (7)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Registrador:pcReg                                                                                         ;              ;
+;    |Ula32:Ula|                                  ; 211 (211)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|Ula32:Ula                                                                                                 ;              ;
 ;    |unidadeControle:unidadeControle|            ; 167 (167)         ; 44 (44)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dataPath|unidadeControle:unidadeControle                                                                           ;              ;
 +-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -351,7 +351,7 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------------+---------------------------------------------+
 ; Register name                                             ; Reason for Removal                          ;
 +-----------------------------------------------------------+---------------------------------------------+
-; Registrador:EPC|Saida[0]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Registrador:EPCReg|Saida[0]                               ; Stuck at GND due to stuck port clock_enable ;
 ; unidadeControle:unidadeControle|state~39                  ; Lost fanout                                 ;
 ; unidadeControle:unidadeControle|state~40                  ; Lost fanout                                 ;
 ; unidadeControle:unidadeControle|state~41                  ; Lost fanout                                 ;
@@ -373,7 +373,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Total registers                              ; 1292  ;
 ; Number of registers using Synchronous Clear  ; 13    ;
-; Number of registers using Synchronous Load   ; 20    ;
+; Number of registers using Synchronous Load   ; 14    ;
 ; Number of registers using Asynchronous Clear ; 1292  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 1257  ;
@@ -585,7 +585,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------------------+
-; Port Connectivity Checks: "Registrador:EPC"                  ;
+; Port Connectivity Checks: "Registrador:EPCReg"               ;
 +---------+--------+------------------+------------------------+
 ; Port    ; Type   ; Severity         ; Details                ;
 +---------+--------+------------------+------------------------+
@@ -620,7 +620,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Mon May 08 22:02:10 2017
+    Info: Processing started: Mon May 08 22:25:10 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projetoHardware -c projetoHardware
 Info: Found 1 design units, including 1 entities, in source file nossos componentes/muxshift.sv
     Info: Found entity 1: MuxShift
@@ -677,9 +677,11 @@ Info: Found 2 design units, including 1 entities, in source file componentes do 
     Info: Found entity 1: Ula32
 Info: Found 1 design units, including 1 entities, in source file nossos componentes/choosebyteunsign.sv
     Info: Found entity 1: chooseByteUnsign
-Warning (10236): Verilog HDL Implicit Net warning at dataPath.sv(93): created implicit net for "wMDRControl"
-Warning (10236): Verilog HDL Implicit Net warning at dataPath.sv(151): created implicit net for "wAlu"
+Warning (10236): Verilog HDL Implicit Net warning at dataPath.sv(95): created implicit net for "wMDRControl"
+Warning (10236): Verilog HDL Implicit Net warning at dataPath.sv(153): created implicit net for "wAlu"
 Info: Elaborating entity "dataPath" for the top level hierarchy
+Warning (10034): Output port "Reg_Desloc" at dataPath.sv(16) has no driver
+Warning (10034): Output port "EPC" at dataPath.sv(18) has no driver
 Info: Elaborating entity "unidadeControle" for hierarchy "unidadeControle:unidadeControle"
 Info (10264): Verilog HDL Case Statement information at unidadeControle.sv(97): all case item expressions in this case statement are onehot
 Info: Elaborating entity "Ula32" for hierarchy "Ula32:Ula"
@@ -761,6 +763,71 @@ Warning: Net is missing source, defaulting to GND
 Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "wInstrucao15_0[16]" is missing source, defaulting to GND
 Warning: 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Reg_Desloc[0]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[1]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[2]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[3]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[4]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[5]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[6]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[7]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[8]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[9]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[10]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[11]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[12]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[13]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[14]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[15]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[16]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[17]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[18]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[19]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[20]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[21]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[22]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[23]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[24]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[25]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[26]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[27]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[28]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[29]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[30]" is stuck at GND
+    Warning (13410): Pin "Reg_Desloc[31]" is stuck at GND
+    Warning (13410): Pin "EPC[0]" is stuck at GND
+    Warning (13410): Pin "EPC[1]" is stuck at GND
+    Warning (13410): Pin "EPC[2]" is stuck at GND
+    Warning (13410): Pin "EPC[3]" is stuck at GND
+    Warning (13410): Pin "EPC[4]" is stuck at GND
+    Warning (13410): Pin "EPC[5]" is stuck at GND
+    Warning (13410): Pin "EPC[6]" is stuck at GND
+    Warning (13410): Pin "EPC[7]" is stuck at GND
+    Warning (13410): Pin "EPC[8]" is stuck at GND
+    Warning (13410): Pin "EPC[9]" is stuck at GND
+    Warning (13410): Pin "EPC[10]" is stuck at GND
+    Warning (13410): Pin "EPC[11]" is stuck at GND
+    Warning (13410): Pin "EPC[12]" is stuck at GND
+    Warning (13410): Pin "EPC[13]" is stuck at GND
+    Warning (13410): Pin "EPC[14]" is stuck at GND
+    Warning (13410): Pin "EPC[15]" is stuck at GND
+    Warning (13410): Pin "EPC[16]" is stuck at GND
+    Warning (13410): Pin "EPC[17]" is stuck at GND
+    Warning (13410): Pin "EPC[18]" is stuck at GND
+    Warning (13410): Pin "EPC[19]" is stuck at GND
+    Warning (13410): Pin "EPC[20]" is stuck at GND
+    Warning (13410): Pin "EPC[21]" is stuck at GND
+    Warning (13410): Pin "EPC[22]" is stuck at GND
+    Warning (13410): Pin "EPC[23]" is stuck at GND
+    Warning (13410): Pin "EPC[24]" is stuck at GND
+    Warning (13410): Pin "EPC[25]" is stuck at GND
+    Warning (13410): Pin "EPC[26]" is stuck at GND
+    Warning (13410): Pin "EPC[27]" is stuck at GND
+    Warning (13410): Pin "EPC[28]" is stuck at GND
+    Warning (13410): Pin "EPC[29]" is stuck at GND
+    Warning (13410): Pin "EPC[30]" is stuck at GND
+    Warning (13410): Pin "EPC[31]" is stuck at GND
 Info: 6 registers lost all their fanouts during netlist optimizations. The first 6 are displayed below.
     Info: Register "unidadeControle:unidadeControle|state~39" lost all its fanouts during netlist optimizations.
     Info: Register "unidadeControle:unidadeControle|state~40" lost all its fanouts during netlist optimizations.
@@ -772,15 +839,15 @@ Warning: Ignored assignments for entity "projetoHardware" -- entity does not exi
     Warning: Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity projetoHardware -section_id "Root Region" was ignored
     Warning: Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity projetoHardware -section_id "Root Region" was ignored
 Info: Generated suppressed messages file C:/Users/sbsx7/Desktop/hwEtapa3Begin/SegundaEtapaHW/projetoHardware.map.smsg
-Info: Implemented 4043 device resources after synthesis - the final resource count might be different
+Info: Implemented 4113 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
-    Info: Implemented 270 output pins
-    Info: Implemented 3739 logic cells
+    Info: Implemented 334 output pins
+    Info: Implemented 3745 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 42 warnings
-    Info: Peak virtual memory: 283 megabytes
-    Info: Processing ended: Mon May 08 22:02:26 2017
-    Info: Elapsed time: 00:00:16
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 109 warnings
+    Info: Peak virtual memory: 282 megabytes
+    Info: Processing ended: Mon May 08 22:25:27 2017
+    Info: Elapsed time: 00:00:17
     Info: Total CPU time (on all processors): 00:00:17
 
 
