@@ -48,9 +48,13 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name LL_ROOT_REGION ON -entity projetoHardware -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -entity projetoHardware -section_id "Root Region"
 set_global_assignment -name SIMULATION_MODE FUNCTIONAL
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE testeSignExtend.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name TOP_LEVEL_ENTITY dataPath
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "Nossos Componentes/projetoHardwareExc.vwf"
+set_global_assignment -name VECTOR_WAVEFORM_FILE "Nossos Componentes/projetoHardwareExc.vwf"
 set_global_assignment -name SYSTEMVERILOG_FILE "Nossos Componentes/MuxShift.sv"
 set_global_assignment -name SYSTEMVERILOG_FILE "Nossos Componentes/concatAddress.sv"
 set_global_assignment -name SYSTEMVERILOG_FILE "Nossos Componentes/concatInstr.sv"
@@ -74,11 +78,8 @@ set_global_assignment -name VHDL_FILE "Componentes do Projeto/Memoria.vhd"
 set_global_assignment -name VHDL_FILE "Componentes do Projeto/RegDesloc.vhd"
 set_global_assignment -name VHDL_FILE "Componentes do Projeto/Registrador.vhd"
 set_global_assignment -name VHDL_FILE "Componentes do Projeto/ula32.vhd"
-set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_global_assignment -name SYSTEMVERILOG_FILE "Nossos Componentes/chooseByteUnsign.sv"
 set_global_assignment -name SYSTEMVERILOG_FILE "Nossos Componentes/chooseHalfUnsign.sv"
 set_global_assignment -name SYSTEMVERILOG_FILE "Nossos Componentes/MuxMemDatain.sv"
 set_global_assignment -name SYSTEMVERILOG_FILE "Nossos Componentes/Concatenador.sv"
-set_global_assignment -name TOP_LEVEL_ENTITY dataPath
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
