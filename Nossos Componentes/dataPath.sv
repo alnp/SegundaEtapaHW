@@ -1,6 +1,6 @@
 module dataPath 
 (	input logic clock, res,
-	output logic [5:0] Estado,
+	output logic [6:0] Estado,
 	output logic IRWrite,
 	output logic [31:0] Address,
 	output logic [31:0] MemData,
@@ -27,7 +27,7 @@ module dataPath
 	logic wWriteOrRead;
 	logic wPCControl;
 	logic [31:0] wMemDataOut;
-	logic [5:0] wState;
+	logic [6:0] wState;
 	logic wIRWrite;
 	logic [5:0] wInstrucao31_26;
 	logic [4:0] wInstrucao25_21;
@@ -48,7 +48,7 @@ module dataPath
 	logic [31:0] wRegBOut;	
 	logic wAluSrcA;
 	logic [1:0] wAluSrcB;
-	logic [2:0] wMemToReg;
+	logic [3:0] wMemToReg;
 	logic [2:0] wShiftControl;
 	logic [31:0] wWriteData;
 	logic [1:0] wRegDst;
@@ -75,6 +75,9 @@ module dataPath
 	logic wEPCWrite;
 	logic wEPCOut;
 	logic [31:0] wChooseByteUOut;
+	logic [31:0] wChooseHalfOut;
+	logic [31:0] wChooseByteHalfOutStore;
+	logic wStore;
 	
 	
 	assign wAndPCControl = wPCCond & wResult;
@@ -110,7 +113,9 @@ module dataPath
 		.shiftControl(wShiftControl),
 		.IorD(wIorD),
 		.shamtOrRs(wShamtOrRs),
-		.epcWrite(wEPCWrite),		
+		.epcWrite(wEPCWrite),
+		.sMemDataIn(wsMemDataIn),
+		.wStore(wStore),
 		.estado(wState)
 		); 
 		
@@ -201,6 +206,13 @@ module dataPath
 		.Result(wResult)
 	);
 	
+	MuxMemDatain MuxMemDatain
+	(	.WriteData(wRegBOut),
+		.ByteHalfWriteData(wChooseByteHalfOutStore),
+		.sMemDataIn(wsMemDataIn),
+		.MemWriteData(wMemWriteData)
+		);
+	
 	MuxDataWrite MuxDataWrite
 	(
 		.ALUOutReg(wALUOut), 
@@ -209,8 +221,10 @@ module dataPath
 		.MemtoReg(wMemToReg),
 		.RegDeslocOut(wRegDeslocOut),
 		.PCJal(wPc),
+		.Byte(wChooseByteUOut),
+		.Half(wChooseHalfOut),
 		.WriteDataMem(wWriteData)
-);
+	);
 	
 	MuxA MuxA
 	(
@@ -294,7 +308,7 @@ module dataPath
 	(	.Address(wAddress),
 		.Clock(clock),
 		.Wr(wWriteOrRead),
-		.Datain(wRegBOut),
+		.Datain(wMemWriteData),
 		.Dataout(wMemDataOut)
 		);
 	
@@ -314,10 +328,23 @@ module dataPath
 		.N(wN)
 	);
 	
+	
+	chooseHalfUnsign chooseHalfUnsign
+	(	.in(wMDROut),
+		.out(wChooseHalfOut)
+		);
+		
 	chooseByteUnsign chooseByteUnsign
 	(	.in(wMDROut),
 		.out(wChooseByteUOut)
 		);
+		
+	Concatenador Concatenador
+	(	.baseword(wMDROut),
+		.B(wRegBOut),
+		.controle(wStore),
+		.saida(wChooseByteHalfOutStore)
+		);		
 	
 	assign Estado = wState;
 	assign MemData = wMemDataOut;
