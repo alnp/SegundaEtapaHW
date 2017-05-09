@@ -205,6 +205,7 @@ module unidadeControle
 			Lhu_step3: state <= Lhu_step4;
 			Lhu_step4: state <= Lhu_step5;
 			Lhu_step5: state <= MemoryRead;
+			Sxori: state <= WriteRegAluImm;
 			
 			endcase
 		end
@@ -1490,11 +1491,34 @@ module unidadeControle
 			Slti:
 			begin
 			end	
-			
+			*/
 			Sxori:
 			begin
-			end	
-*/	
+				epcWrite = 1'b0;
+				shamtOrRs = 1'b0;
+				shiftControl = 3'b000;
+				mdrControl = 1'b0;
+				memToReg = 4'b0001;
+				pcCond = 1'b0;
+				origPC = 3'b000;
+				regDst = 2'b00;
+				regWrite = 1'b0;
+				bneORbeq = 1'b0;
+				IorD = 2'b01;
+						
+				memWriteOrRead = 1'b0;
+				pcControl = 1'b0;
+				irWrite = 1'b0;
+							
+				aluControl = 3'b110;
+				aluSrcA = 1'b1;
+				aluSrcB = 2'b10;
+				writeA = 1'b0;
+				writeB = 1'b0;
+				regAluControl = 1'b1;
+				estado <= state;					
+			end
+				
 		endcase
 	end
 		
