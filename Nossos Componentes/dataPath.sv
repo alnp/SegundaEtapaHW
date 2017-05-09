@@ -74,6 +74,8 @@ module dataPath
 	logic wEPCOut;
 	logic [31:0] wChooseByteUOut;
 	logic [31:0] wChooseHalfOut;
+	logic [31:0] wChooseByteHalfOutStore;
+	logic wStore;
 	
 	
 	assign wAndPCControl = wPCCond & wResult;
@@ -108,7 +110,10 @@ module dataPath
 		.memToReg(wMemToReg),
 		.shiftControl(wShiftControl),
 		.IorD(wIorD),
-		.shamtOrRs(wShamtOrRs),		
+		.shamtOrRs(wShamtOrRs),
+		.epcWrite(wEPCWrite),
+		.sMemDataIn(wsMemDataIn),
+		.wStore(wStore),		
 		.estado(wState)
 		); 
 		
@@ -199,6 +204,13 @@ module dataPath
 		.Result(wResult)
 	);
 	
+	MuxMemDatain MuxMemDatain
+	(	.WriteData(wRegBOut),
+		.ByteHalfWriteData(wChooseByteHalfOutStore),
+		.sMemDataIn(wsMemDataIn),
+		.MemWriteData(wMemWriteData)
+		);
+	
 	MuxDataWrite MuxDataWrite
 	(
 		.ALUOutReg(wALUOut), 
@@ -210,7 +222,7 @@ module dataPath
 		.Byte(wChooseByteUOut),
 		.Half(wChooseHalfOut),
 		.WriteDataMem(wWriteData)
-);
+	);
 	
 	MuxA MuxA
 	(
@@ -294,7 +306,7 @@ module dataPath
 	(	.Address(wAddress),
 		.Clock(clock),
 		.Wr(wWriteOrRead),
-		.Datain(wRegBOut),
+		.Datain(wMemWriteData),
 		.Dataout(wMemDataOut)
 		);
 	
@@ -323,6 +335,14 @@ module dataPath
 	(	.in(wMDROut),
 		.out(wChooseHalfOut)
 		);
+		
+	Concatenador Concatenador
+	(	.baseword(wMDROut),
+		.B(wRegBOut),
+		.controle(wStore),
+		.saida(wChooseByteHalfOutStore)
+		);		
+		
 	
 	assign StateOut = wState;
 	assign MemData = wMemDataOut;

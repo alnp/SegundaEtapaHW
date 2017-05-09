@@ -1465,78 +1465,6 @@ chooseByteUnsign:chooseByteUnsign
 
 # end
 # entity
-dataPath
-# storage
-db|projetoHardware.(0).cnf
-db|projetoHardware.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-nossos componentes|datapath.sv
-73709529af15e0e382dbc672e389e858
-9
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
-unidadeControle
-# storage
-db|projetoHardware.(1).cnf
-db|projetoHardware.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-nossos componentes|unidadecontrole.sv
-14485582feef9225af3ea99d88cb6a3f
-9
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-unidadeControle:unidadeControle
-}
-# macro_sequence
-
-# end
-# entity
 MuxDataWrite
 # storage
 db|projetoHardware.(7).cnf
@@ -1604,6 +1532,150 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # hierarchies {
 chooseHalfUnsign:chooseHalfUnsign
+}
+# macro_sequence
+
+# end
+# entity
+unidadeControle
+# storage
+db|projetoHardware.(1).cnf
+db|projetoHardware.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+nossos componentes|unidadecontrole.sv
+e646bbce45472ee819a89ec2d9cd85f
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+unidadeControle:unidadeControle
+}
+# macro_sequence
+
+# end
+# entity
+MuxMemDatain
+# storage
+db|projetoHardware.(28).cnf
+db|projetoHardware.(28).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+nossos componentes|muxmemdatain.sv
+8162db52b9e03aa086fc89f9e294f8c4
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MuxMemDatain:MuxMemDatain
+}
+# macro_sequence
+
+# end
+# entity
+Concatenador
+# storage
+db|projetoHardware.(29).cnf
+db|projetoHardware.(29).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+nossos componentes|concatenador.sv
+faddc4d8d91fcdcad86717a28a6e34c
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+Concatenador:Concatenador
+}
+# macro_sequence
+
+# end
+# entity
+dataPath
+# storage
+db|projetoHardware.(0).cnf
+db|projetoHardware.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+nossos componentes|datapath.sv
+feaa1a91bf9cf2b8fba7bc5ab8c02ddc
+9
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
 }
 # macro_sequence
 
