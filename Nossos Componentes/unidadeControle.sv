@@ -84,7 +84,12 @@ module unidadeControle
 	WaitMemReadOv,	//52
 	Wait2MemReadOv,	//53
 	EscrevePcOv,	//54
-	Subu		//55
+	Subu,		//55
+	ShiftSllWrite,	//56
+	ShiftSllvWrite,	//57
+	ShiftSraWrite,	//58
+	ShiftSravWrite,	//59
+	ShiftSrlWrite	//60
 	} state;
 	
 	initial state <= Reset;
@@ -145,7 +150,7 @@ module unidadeControle
 					6'he: state <=	Sxori;		//sxori*/
 					6'h3: state <= JalEscreveR31;
 					6'h10: state <= Rte;
-					default: state <= MemReadEscreveEpcOp;
+				default: state <= MemReadEscreveEpcOp;
 
 					
 				endcase
@@ -189,10 +194,22 @@ module unidadeControle
 					6'h2: state <= ShiftExeSrl;
 				endcase
 			end
-			ShiftExeSllv: state <= MemoryRead;
-			ShiftExeSra: state <= MemoryRead;
-			ShiftExeSrav: state <= MemoryRead;
-			ShiftExeSrl: state <= MemoryRead;
+			
+			ShiftExeSll: state <= ShiftSllWrite;
+			ShiftSllWrite: state <= MemoryRead;
+			
+			ShiftExeSllv: state <= ShiftSllvWrite;
+			ShiftSllvWrite: state <= MemoryRead;
+			
+			ShiftExeSra: state <= ShiftSraWrite;
+			ShiftSraWrite: state <= MemoryRead;
+			
+			ShiftExeSrav: state <= ShiftSravWrite;
+			ShiftSravWrite: state <= MemoryRead;
+			
+			ShiftExeSrl: state <= ShiftSrlWrite;
+			ShiftSrlWrite: state <= MemoryRead;
+			
 			Slt: state <= SltWrite;
 			SltWrite: state <= MemoryRead;
 			JalEscreveR31: state <= Jal;
@@ -952,12 +969,60 @@ module unidadeControle
 				writeA = 1'b0;
 				writeB = 1'b1;
 				regDst = 2'b00;
+				regWrite = 1'b0;
+				bneORbeq = 1'b0;
+				IorD = 2'b01;
+				estado <= state;
+			end
+			ShiftSraWrite:
+			begin
+				epcWrite = 1'b0;
+				shamtOrRs = 1'b0;
+				shiftControl = 3'b100;
+				memWriteOrRead = 1'b0;
+				mdrControl = 1'b0;
+				memToReg = 3'b101;
+				pcControl = 1'b0;
+				pcCond = 1'b0;
+				origPC = 3'b000;
+				irWrite = 1'b0;
+				aluControl = 3'b001;
+				aluSrcA = 1'b0;
+				aluSrcB = 2'b00;
+				regAluControl = 1'b0;
+				writeA = 1'b0;
+				writeB = 1'b1;
+				regDst = 2'b00;
 				regWrite = 1'b1;
 				bneORbeq = 1'b0;
 				IorD = 2'b01;
 				estado <= state;
 			end
 			ShiftExeSrav:
+			begin
+				epcWrite = 1'b0;
+				shamtOrRs = 1'b1;
+				shiftControl = 3'b100;
+				memWriteOrRead = 1'b0;
+				mdrControl = 1'b0;
+				memToReg = 3'b101;
+				pcControl = 1'b0;
+				pcCond = 1'b0;
+				origPC = 3'b000;
+				irWrite = 1'b0;
+				aluControl = 3'b001;
+				aluSrcA = 1'b0;
+				aluSrcB = 2'b00;
+				regAluControl = 1'b0;
+				writeA = 1'b0;
+				writeB = 1'b1;
+				regDst = 2'b00;
+				regWrite = 1'b0;
+				bneORbeq = 1'b0;
+				IorD = 2'b01;
+				estado <= state;
+			end
+			ShiftSravWrite:
 			begin
 				epcWrite = 1'b0;
 				shamtOrRs = 1'b1;
@@ -1000,12 +1065,60 @@ module unidadeControle
 				writeA = 1'b0;
 				writeB = 1'b1;
 				regDst = 2'b00;
+				regWrite = 1'b0;
+				bneORbeq = 1'b0;
+				IorD = 2'b01;
+				estado <= state;
+			end
+			ShiftSrlWrite:
+			begin
+				epcWrite = 1'b0;
+				shamtOrRs = 1'b0;
+				shiftControl = 3'b011;
+				memWriteOrRead = 1'b0;
+				mdrControl = 1'b0;
+				memToReg = 3'b101;
+				pcControl = 1'b0;
+				pcCond = 1'b0;
+				origPC = 3'b000;
+				irWrite = 1'b0;
+				aluControl = 3'b001;
+				aluSrcA = 1'b0;
+				aluSrcB = 2'b00;
+				regAluControl = 1'b0;
+				writeA = 1'b0;
+				writeB = 1'b1;
+				regDst = 2'b00;
 				regWrite = 1'b1;
 				bneORbeq = 1'b0;
 				IorD = 2'b01;
 				estado <= state;
 			end
 			ShiftExeSllv:
+			begin
+				epcWrite = 1'b0;
+				shamtOrRs = 1'b1;
+				shiftControl = 3'b010;
+				memWriteOrRead = 1'b0;
+				mdrControl = 1'b0;
+				memToReg = 3'b101;
+				pcControl = 1'b0;
+				pcCond = 1'b0;
+				origPC = 3'b000;
+				irWrite = 1'b0;
+				aluControl = 3'b001;
+				aluSrcA = 1'b0;
+				aluSrcB = 2'b00;
+				regAluControl = 1'b0;
+				writeA = 1'b0;
+				writeB = 1'b1;
+				regDst = 2'b00;
+				regWrite = 1'b0;
+				bneORbeq = 1'b0;
+				IorD = 2'b01;
+				estado <= state;
+			end
+			ShiftSllvWrite:
 			begin
 				epcWrite = 1'b0;
 				shamtOrRs = 1'b1;
@@ -1048,11 +1161,36 @@ module unidadeControle
 				writeA = 1'b0;
 				writeB = 1'b1;
 				regDst = 2'b00;
+				regWrite = 1'b0;
+				bneORbeq = 1'b0;
+				IorD = 2'b01;
+				estado <= state;
+			end
+			ShiftSllWrite:
+			begin
+				epcWrite = 1'b0;
+				shamtOrRs = 1'b0;
+				shiftControl = 3'b010;
+				memWriteOrRead = 1'b0;
+				mdrControl = 1'b0;
+				memToReg = 3'b101;
+				pcControl = 1'b0;
+				pcCond = 1'b0;
+				origPC = 3'b000;
+				irWrite = 1'b0;
+				aluControl = 3'b001;
+				aluSrcA = 1'b0;
+				aluSrcB = 2'b00;
+				regAluControl = 1'b0;
+				writeA = 1'b0;
+				writeB = 1'b1;
+				regDst = 2'b00;
 				regWrite = 1'b1;
 				bneORbeq = 1'b0;
 				IorD = 2'b01;
 				estado <= state;
 			end
+			
 			Slt:
 			begin
 				epcWrite = 1'b0;

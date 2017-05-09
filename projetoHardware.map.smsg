@@ -1,4 +1,4 @@
 Info (10281): Verilog HDL Declaration information at dataPath.sv(12): object "AluOut" differs only in case from object "ALUOut" in the same scope
-Warning (10268): Verilog HDL information at unidadeControle.sv(213): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at unidadeControle.sv(230): always construct contains both blocking and non-blocking assignments
 Info (10281): Verilog HDL Declaration information at unidadeControle.sv(2): object "reset" differs only in case from object "Reset" in the same scope
 Info (10281): Verilog HDL Declaration information at unidadeControle.sv(14): object "irWrite" differs only in case from object "IRWrite" in the same scope

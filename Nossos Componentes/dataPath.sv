@@ -109,7 +109,8 @@ module dataPath
 		.memToReg(wMemToReg),
 		.shiftControl(wShiftControl),
 		.IorD(wIorD),
-		.shamtOrRs(wShamtOrRs),		
+		.shamtOrRs(wShamtOrRs),
+		.epcWrite(wEPCWrite),		
 		.estado(wState)
 		); 
 		
@@ -331,6 +332,7 @@ module dataPath
 	assign wr = wWriteOrRead;
 	assign RegWrite = wRegWrite;
 	assign IRWrite = wIRWrite;
-	
+	assign Reg_Desloc = wRegDeslocOut;
+	assign EPC = wEPCOut;
 		
 endmodule: dataPath
