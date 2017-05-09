@@ -43,12 +43,12 @@ module unidadeControle
 	Beq,	//12
 	Bne,	//13
 	LW,		//14
-	LW_step2,	//15
+	LW_step2,		//15
 	LW_step3_wait,	//16
-	LW_step4,	//17
-	LW_step5,	//18
-	SW,		//19
-	SW_step2,	//20
+	LW_step4,		//17
+	LW_step5,		//18
+	SW,				//19
+	SW_step2,		//20
 	SW_step3_wait,	//21
 	Lui,	//22
 	J,		//23
@@ -59,20 +59,20 @@ module unidadeControle
 	Andi,	//28
 	Lbu,	//29
 	Lhu,	//30
-	/*Sb,		//31
-	Sh,		//32
-	Slti,	//33
-	Sxori	//34*/
+	//Sb,		//31
+	//Sh,		//32
+	Slti,		//33
+	Sxori,		//34
 	ShiftCarrega,	//35
 	ShiftExeSll,	//36
 	ShiftExeSllv,	//37
 	ShiftExeSra,	//38
 	ShiftExeSrav,	//39
-	ShiftExeSrl,		//40
-	Slt,	//41
-	SltWrite,	//42
+	ShiftExeSrl,	//40
+	Slt,			//41
+	SltWrite,		//42
 	JalEscreveR31,	//43
-	Jal,	//44
+	Jal,		//44
 	Lbu_step2, //45
 	Lbu_step3, //46
 	Lbu_step4, //47
@@ -80,7 +80,8 @@ module unidadeControle
 	Lhu_step2, //49
 	Lhu_step3, //50
 	Lhu_step4, //51
-	Lhu_step5  //52
+	Lhu_step5, //52
+	SltiWrite  //53
 	} state;
 	
 	initial state <= Reset;
@@ -128,15 +129,15 @@ module unidadeControle
 					6'hf: state <= Lui;			//lui
 					6'h2: state <=	J;			//jump
 					
-					6'h8: state <=	Addi;			//addi
-					6'h9: state <=	Addiu;			//addiu
-					6'hc: state <=	Andi;			//andi
-					6'h24: state <=	Lbu;			//lbu
-					/*6'h25: state <=	Lhu;			//lhu
-					6'h28: state <=	Sb;				//sb
-					6'h29: state <=	Sh;				//sh
+					6'h8: state <=	Addi;		//addi
+					6'h9: state <=	Addiu;		//addiu
+					6'hc: state <=	Andi;		//andi
+					6'h24: state <=	Lbu;		//lbu
+					6'h25: state <=	Lhu;		//lhu
+					//6'h28: state <=	Sb;			//sb
+					//6'h29: state <=	Sh;			//sh
 					6'ha: state <=	Slti;			//slti
-					6'he: state <=	Sxori;			//sxori*/
+					6'he: state <=	Sxori;			//sxori
 					6'h3: state <= JalEscreveR31;
 					
 				endcase
@@ -166,7 +167,7 @@ module unidadeControle
 			Addi: 
 				begin
 					if (overflow == 1) //Ocorre um overflow
-						state <= WriteRegAluImm; //EXCEPTION TROCAR AQUI CARAI
+						state <= WriteRegAluImm; //EXCEPTION TROCAR AQUI CARAI*************
 					else 			   //Volta para a busca
 						state <= WriteRegAluImm;
 				end
@@ -206,7 +207,8 @@ module unidadeControle
 			Lhu_step4: state <= Lhu_step5;
 			Lhu_step5: state <= MemoryRead;
 			Sxori: state <= WriteRegAluImm;
-			
+			Slti: state <= SltiWrite;
+			SltiWrite: state <= MemoryRead;			
 			endcase
 		end
 	end
@@ -1348,7 +1350,6 @@ module unidadeControle
 				IorD = 2'b01;
 				estado <= state;
 			end
-			
 			Lhu:
 			begin
 				epcWrite = 1'b0;
@@ -1487,11 +1488,68 @@ module unidadeControle
 			Sh:
 			begin
 			end		
-			
+*/					
 			Slti:
 			begin
-			end	
-			*/
+				epcWrite = 1'b0;
+				shamtOrRs = 1'b0;
+				shiftControl = 3'b000;
+				memWriteOrRead = 1'b0;
+				mdrControl = 1'b0;
+				memToReg = 4'b0101;
+				pcControl = 1'b0;
+				pcCond = 1'b0;
+				origPC = 3'b000;
+				irWrite = 1'b0;
+				
+				aluControl = 3'b111;
+				aluSrcA = 1'b1;
+				aluSrcB = 2'b10;
+				regAluControl = 1'b0;
+				writeA = 1'b1;
+				writeB = 1'b1;
+				regDst = 2'b00;
+				regWrite = 1'b0;
+				bneORbeq = 1'b0;
+				IorD = 2'b01;
+				estado <= state;
+			end
+			SltiWrite:
+			begin
+				epcWrite = 1'b0;
+				shamtOrRs = 1'b0;
+				shiftControl = 3'b000;
+				memWriteOrRead = 1'b0;
+				mdrControl = 1'b0;
+				pcControl = 1'b0;
+				pcCond = 1'b0;
+				origPC = 3'b000;
+				irWrite = 1'b0;
+				
+				aluControl = 3'b111;
+				aluSrcA = 1'b1;
+				aluSrcB = 2'b10;
+				regAluControl = 1'b0;
+				writeA = 1'b1;
+				writeB = 1'b1;
+				bneORbeq = 1'b0;
+				IorD = 2'b01;
+				estado <= state;
+				case(menor)
+					1'b0:
+					begin
+						memToReg = 4'b0011;
+						regDst = 2'b01;
+						regWrite = 1'b1;
+					end
+					1'b1:
+					begin
+						memToReg = 4'b0100;
+						regDst = 2'b01;
+						regWrite = 1'b1;
+					end
+				endcase
+			end						
 			Sxori:
 			begin
 				epcWrite = 1'b0;
