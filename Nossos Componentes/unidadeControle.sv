@@ -45,12 +45,12 @@ module unidadeControle
 	Beq,	//12
 	Bne,	//13
 	LW,		//14
-	LW_step2,	//15
+	LW_step2,		//15
 	LW_step3_wait,	//16
-	LW_step4,	//17
-	LW_step5,	//18
-	SW,		//19
-	SW_step2,	//20
+	LW_step4,		//17
+	LW_step5,		//18
+	SW,				//19
+	SW_step2,		//20
 	SW_step3_wait,	//21
 	Lui,	//22
 	J,		//23
@@ -62,19 +62,19 @@ module unidadeControle
 	Lbu,	//29
 	Lhu,	//30
 	SB,		//31
-	SH,	/*	//32
-	Slti,	//33
-	Sxori	//34*/
+	SH,	//32
+	Slti,		//33
+	Sxori,		//34
 	ShiftCarrega,	//35
 	ShiftExeSll,	//36
 	ShiftExeSllv,	//37
 	ShiftExeSra,	//38
 	ShiftExeSrav,	//39
-	ShiftExeSrl,		//40
-	Slt,	//41
-	SltWrite,	//42
+	ShiftExeSrl,	//40
+	Slt,			//41
+	SltWrite,		//42
 	JalEscreveR31,	//43
-	Jal,	//44
+	Jal,		//44
 	Lbu_step2, //45
 	Lbu_step3, //46
 	Lbu_step4, //47
@@ -90,7 +90,8 @@ module unidadeControle
 	SH_step2, //49
 	SH_step3, //50
 	SH_step4, //51
-	SH_step5 //52
+	SH_step5, //52
+	SltiWrite  //53
 	} state;
 	
 	initial state <= Reset;
@@ -145,8 +146,8 @@ module unidadeControle
 					6'h25: state <=	Lhu;			//lhu
 					6'h28: state <=	SB;				//sb
 					6'h29: state <=	SH;				//sh
-					/*6'ha: state <=	Slti;			//slti
-					6'he: state <=	Sxori;			//sxori*/
+					6'ha: state <=	Slti;			//slti
+					6'he: state <=	Sxori;			//sxori
 					6'h3: state <= JalEscreveR31;
 					
 				endcase
@@ -176,7 +177,7 @@ module unidadeControle
 			Addi: 
 				begin
 					if (overflow == 1) //Ocorre um overflow
-						state <= WriteRegAluImm; //EXCEPTION TROCAR AQUI CARAI
+						state <= WriteRegAluImm; //EXCEPTION TROCAR AQUI CARAI*************
 					else 			   //Volta para a busca
 						state <= WriteRegAluImm;
 				end
@@ -225,7 +226,9 @@ module unidadeControle
 			SH_step3: state <= SH_step4;
 			SH_step4: state <= SH_step5;
 			SH_step5: state <= MemoryRead;
-			
+			Sxori: state <= WriteRegAluImm;
+			Slti: state <= SltiWrite;
+			SltiWrite: state <= MemoryRead;			
 			endcase
 		end
 	end
@@ -1455,7 +1458,6 @@ module unidadeControle
 				IorD = 2'b01;
 				estado <= state;
 			end
-			
 			Lhu:
 			begin
 				wStore = 1'b0;
@@ -1876,17 +1878,100 @@ module unidadeControle
 				IorD = 2'b01;
 				estado <= state;
 			end
-				
-/*	
-			
 			Slti:
 			begin
-			end	
-			
+				wStore = 1'b0;
+				sMemDataIn = 2'b00;
+				epcWrite = 1'b0;
+				shamtOrRs = 1'b0;
+				shiftControl = 3'b000;
+				memWriteOrRead = 1'b0;
+				mdrControl = 1'b0;
+				memToReg = 4'b0101;
+				pcControl = 1'b0;
+				pcCond = 1'b0;
+				origPC = 3'b000;
+				irWrite = 1'b0;
+				
+				aluControl = 3'b111;
+				aluSrcA = 1'b1;
+				aluSrcB = 2'b10;
+				regAluControl = 1'b0;
+				writeA = 1'b1;
+				writeB = 1'b1;
+				regDst = 2'b00;
+				regWrite = 1'b0;
+				bneORbeq = 1'b0;
+				IorD = 2'b01;
+				estado <= state;
+			end
+			SltiWrite:
+			begin
+				wStore = 1'b0;
+				sMemDataIn = 2'b00;
+				epcWrite = 1'b0;
+				shamtOrRs = 1'b0;
+				shiftControl = 3'b000;
+				memWriteOrRead = 1'b0;
+				mdrControl = 1'b0;
+				pcControl = 1'b0;
+				pcCond = 1'b0;
+				origPC = 3'b000;
+				irWrite = 1'b0;
+				
+				aluControl = 3'b111;
+				aluSrcA = 1'b1;
+				aluSrcB = 2'b10;
+				regAluControl = 1'b0;
+				writeA = 1'b1;
+				writeB = 1'b1;
+				bneORbeq = 1'b0;
+				IorD = 2'b01;
+				estado <= state;
+				case(menor)
+					1'b0:
+					begin
+						memToReg = 4'b0011;
+						regDst = 2'b01;
+						regWrite = 1'b1;
+					end
+					1'b1:
+					begin
+						memToReg = 4'b0100;
+						regDst = 2'b01;
+						regWrite = 1'b1;
+					end
+				endcase
+			end						
 			Sxori:
 			begin
-			end	
-*/	
+				wStore = 1'b0;
+				sMemDataIn = 2'b00;
+				epcWrite = 1'b0;
+				shamtOrRs = 1'b0;
+				shiftControl = 3'b000;
+				mdrControl = 1'b0;
+				memToReg = 4'b0001;
+				pcCond = 1'b0;
+				origPC = 3'b000;
+				regDst = 2'b00;
+				regWrite = 1'b0;
+				bneORbeq = 1'b0;
+				IorD = 2'b01;
+						
+				memWriteOrRead = 1'b0;
+				pcControl = 1'b0;
+				irWrite = 1'b0;
+							
+				aluControl = 3'b110;
+				aluSrcA = 1'b1;
+				aluSrcB = 2'b10;
+				writeA = 1'b0;
+				writeB = 1'b0;
+				regAluControl = 1'b1;
+				estado <= state;					
+			end
+				
 		endcase
 	end
 		

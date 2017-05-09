@@ -1,5 +1,5 @@
 Assembler report for projetoHardware
-Mon May 08 23:56:35 2017
+Tue May 09 00:02:50 2017
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon May 08 23:56:35 2017 ;
+; Assembler Status      ; Successful - Tue May 09 00:02:50 2017 ;
 ; Revision Name         ; projetoHardware                       ;
 ; Top-level Entity Name ; dataPath                              ;
 ; Family                ; Cyclone II                            ;
@@ -95,7 +95,7 @@ applicable agreement for further details.
 +----------------+-----------------------------------------------------------------------------------------+
 ; Device         ; EP2C70F896C6                                                                            ;
 ; JTAG usercode  ; 0xFFFFFFFF                                                                              ;
-; Checksum       ; 0x008AB6CB                                                                              ;
+; Checksum       ; 0x008A4AC2                                                                              ;
 +----------------+-----------------------------------------------------------------------------------------+
 
 
@@ -106,7 +106,7 @@ applicable agreement for further details.
 +--------------------+-------------------------------------------------------------------------------------+
 ; Device             ; EPCS16                                                                              ;
 ; JTAG usercode      ; 0x00000000                                                                          ;
-; Checksum           ; 0x18453495                                                                          ;
+; Checksum           ; 0x183CB16F                                                                          ;
 ; Compression Ratio  ; 3                                                                                   ;
 +--------------------+-------------------------------------------------------------------------------------+
 
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Mon May 08 23:56:31 2017
+    Info: Processing started: Tue May 09 00:02:41 2017
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off projetoHardware -c projetoHardware
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 335 megabytes
-    Info: Processing ended: Mon May 08 23:56:35 2017
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Processing ended: Tue May 09 00:02:50 2017
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:08
 
 
