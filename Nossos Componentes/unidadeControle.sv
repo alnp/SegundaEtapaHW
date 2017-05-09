@@ -1,5 +1,4 @@
-
-	module unidadeControle
+module unidadeControle
 (	input logic clk, reset,
 	input logic [5:0] opcode, 
 	input logic [5:0] funct, 
@@ -56,16 +55,16 @@
 	JR,		//24
 	//Modificacao - Alessandra
 	WriteRegAluImm, 	//25
-	Addu, /*	//26
-	Addi,	//27
-	Addiu	//28
-	Andi,	//29
-	Lbu,	//30
-	Lhu,	//31
-	Sb,		//32
-	Sh,		//33
-	Slti,	//34
-	Sxori	//35*/
+	Addu, 	//26
+	//Addi,	//27
+	Addiu,	//28
+	//Andi,	//29
+	//Lbu,	//30
+	//Lhu,	//31
+	//Sb,		//32
+	//Sh,		//33
+	//Slti,	//34
+	//Sxori	//35*/
 	ShiftCarrega,	//36
 	ShiftExeSll,	//37
 	ShiftExeSllv,	//38
@@ -76,7 +75,7 @@
 	SltWrite,	//43
 	JalEscreveR31,	//44
 	Jal,	//45
-	Rte		//46
+	Rte,		//46
 	MemReadEscreveEpcOp, //47
 	WaitMemReadOp,	//48
 	Wait2MemReadOp, //49
@@ -84,7 +83,8 @@
 	MemReadEscreveEpcOv,	//51
 	WaitMemReadOv,	//52
 	Wait2MemReadOv,	//53
-	EscrevePcOv		//54
+	EscrevePcOv,	//54
+	Subu		//55
 	} state;
 	
 	initial state <= Reset;
@@ -135,7 +135,7 @@
 					6'h2: state <=	J;			//jump
 					
 					//6'h8: state <= Addi;		//addi
-					6'h9: state <=	;			//addiu
+					6'h9: state <=	Addiu;			//addiu
 					/*6'hc: state <= Andi;		//andi
 					6'h24: state <=	Lbu;		//lbu
 					6'h25: state <=	Lhu;		//lhu
@@ -152,14 +152,14 @@
 			end
 			Add:
 			begin
-				if(overflow) state <= excessao;
-				else state <= WriteRegAlu;
+				/*if(overflow) state <= excessao;
+				else */state <= WriteRegAlu;
 			end
 			And: state <= WriteRegAlu;
 			Sub: 
 			begin
-				if(overflow) state <= excecao;
-				else state <= WriteRegAlu;
+				/*if(overflow) state <= excecao;
+				else */state <= WriteRegAlu;
 			end	
 			Xor: state <= WriteRegAlu;
 			Break: state <= Break;
@@ -203,6 +203,7 @@
 			WaitMemReadOp: state <= Wait2MemReadOp;
 			Wait2MemReadOp: state <= EscrevePcOp;
 			EscrevePcOp: state <= MemoryRead;
+			Rte: state <= MemoryRead;
 			endcase
 		end
 	end
@@ -1364,6 +1365,7 @@
 			
 			Addu:
 			begin
+				epcWrite = 1'b0;
 				shamtOrRs = 1'b0;
 				shiftControl = 3'b000;
 				mdrControl = 1'b0;
@@ -1390,6 +1392,7 @@
 			
 			Subu:
 			begin
+				epcWrite = 1'b0;
 				shamtOrRs = 1'b0;
 				shiftControl = 3'b000;
 				mdrControl = 1'b0;
@@ -1413,7 +1416,32 @@
 				regAluControl = 1'b1;
 				estado <= state;
 			end
-			
+			Rte:
+			begin
+				epcWrite = 1'b0;
+				shamtOrRs = 1'b0;
+				shiftControl = 3'b000;
+				mdrControl = 1'b0;
+				memToReg = 3'b001;
+				pcCond = 1'b0;
+				origPC = 2'b00;
+				regDst = 2'b00;
+				regWrite = 1'b0;
+				bneORbeq = 1'b0;
+				IorD = 1'b1;
+				
+				memWriteOrRead = 1'b0;
+				pcControl = 1'b0;
+				irWrite = 1'b0;
+				
+				aluControl = 3'b010;
+				aluSrcA = 1'b1;
+				aluSrcB = 2'b00;
+				writeA = 1'b0;
+				writeB = 1'b0;
+				regAluControl = 1'b1;
+				estado <= state;
+			end
 			
 			/*			
 			Addi:
